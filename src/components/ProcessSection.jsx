@@ -6,27 +6,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const processItems = [
   {
-    img: 'https://img.freepik.com/free-vector/car-wheel-tires-stacked-top-each-other-realistic-composition-white-background-vector-illustration_1284-82101.jpg?ga=GA1.1.1540081063.1740168253&semt=ais_hybrid&w=740',
+    img: 'src/assets/img/welcometoKK/tyre.jpg',
     title: 'Select Your Tyre',
     text: 'Choose from a wide range of high-performance tyres designed for all farming and transport needs.',
   },
   {
-    img: 'https://img.freepik.com/premium-photo/pouring-engine-oil-from-its-plastic-container_33882-189.jpg?ga=GA1.1.1540081063.1740168253&semt=ais_hybrid&w=740',
+    img: 'src/assets/img/welcometoKK/oil.png',
     title: 'Pick the Right Oil',
     text: 'Browse our engine oils and lubricants to find what best suits your tractors and heavy machinery.',
   },
   {
-    img: 'https://img.freepik.com/free-vector/hand-drawn-business-communication-concept_52683-77063.jpg?ga=GA1.1.1540081063.1740168253&semt=ais_hybrid&w=740',
+    img: 'src/assets/img/welcometoKK/Talktoexpert.jpg',
     title: 'Talk to Experts',
     text: 'Need help choosing? Our support team is always ready to guide you with expert advice.',
   },
   {
-    img: 'https://img.freepik.com/free-vector/cash-delivery-concept-illustration_23-2148755957.jpg?ga=GA1.1.1540081063.1740168253&semt=ais_hybrid&w=740',
+    img: 'src/assets/img/welcometoKK/PlaceOrder.jpg',
     title: 'Place Your Orderr',
     text: 'Once satisfied, place your order easily through our online system or contact us directly.',
   },
   {
-    img: 'https://img.freepik.com/free-vector/express-courier-delivery-professional-postal-service-cargo-transportation-business-gods-distribution-home-delivering-idea-design-element_335657-34.jpg?ga=GA1.1.1540081063.1740168253&semt=ais_hybrid&w=740',
+    img: 'src/assets/img/welcometoKK/fastDilivry.jpg',
     title: 'Fast Delivery',
     text: 'We deliver your products safely and quickly, right to your doorstep or farm.',
   },
@@ -72,7 +72,7 @@ const ProcessSection = () => {
           data-wow-delay="0.3s"
         >
           <div className="title-img">
-            <img src="src/assets/img/icon/title-logo.png" alt="title logo" />
+            <img src="src/assets/img/icon/title-logo.png"  alt="title logo" />
           </div>
           <span className="sec-subtitle">Welcome to Kissan Kendra</span>
           <h2 className="sec-title">How We Help You Get What You Need</h2>

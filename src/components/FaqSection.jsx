@@ -78,19 +78,43 @@ const FaqSection = () => {
 
           {/* FAQ Image */}
           <div className="col-lg-6">
-            <div className="faq-img">
-              <div className="faq-img1">
-                <img src="src/assets/img/faq/faq-1-1.jpg" alt="faq 1" />
-              </div>
-              <div className="faq-img2">
-                <img src="src/assets/img/faq/faq-1-2.jpg" alt="faq 2" />
-              </div>
-              <div className="media-box1">
-                <span className="media-info">100%</span>
-                <p className="media-text">client satisfaction</p>
-              </div>
-            </div>
-          </div>
+  <div className="faq-img" style={{ position: "relative" }}>
+    {/* First image - cover */}
+    <div className="faq-img1" style={{ height: "300px", overflow: "hidden" }}>
+      <img
+        src="src/assets/img/faq/faq-1-1.jpg"
+        alt="faq 1"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+      />
+    </div>
+
+    {/* Second image - cover */}
+    <div className="faq-img2" style={{ height: "300px", overflow: "hidden", marginTop: "15px" }}>
+      <img
+        src="src/assets/img/faq/faq-1-2.jpg"
+        alt="faq 2"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+      />
+    </div>
+
+    {/* Text/image box - untouched */}
+    <div className="media-box1" >
+      <span className="media-info">100%</span>
+      <p className="media-text">client satisfaction</p>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </section>

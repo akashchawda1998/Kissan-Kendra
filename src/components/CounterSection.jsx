@@ -55,7 +55,7 @@ const CounterSection = () => {
     <section
       className="counter-layout1 space"
       style={{
-        backgroundImage: 'url(https://media.istockphoto.com/id/2166500060/video/agricultural-engineer-and-a-farmer-analyzing-data-on-digital-tablet-in-the-field-at-sunset.jpg?s=640x640&k=20&c=8Ffwmr5n9D1KILTsgaHBeaTqlbuMtFvyJts1ofCcSe4=)',
+        backgroundImage: 'url(src/assets/img/about/about-bg-agriculture.jpg',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -114,7 +114,7 @@ const CounterSection = () => {
         className="shape-mockup moving z-index d-none d-lg-block"
         style={{ right: '8%', bottom: '22%' }}
       >
-        <img src="src/assets/img/shep/about-shep-1.png" alt="shapes" />
+        {/* <img src="src/assets/img/shep/about-shep-1.png" alt="shapes" /> */}
       </div>
     </section>
   );

@@ -58,13 +58,13 @@ const Home = () => {
             />
           </div> */}
                 <img
-                  src="https://img.freepik.com/free-photo/cheerful-gardeners-with-pruner-spray-bottle_23-2147768549.jpg?ga=GA1.1.1540081063.1740168253&semt=ais_hybrid&w=740"
+                  src="src/assets/img/about/about-1-2(2).png"
                   alt="Tractor"
                   style={{ width: "350px", height: "500px", objectFit: "cover", borderRadius: "10px" }}
                   className="img1"
                 />
                 <img
-                  src="https://img.freepik.com/free-photo/quality-assurance-clipboard-icon_53876-123828.jpg?ga=GA1.1.1540081063.1740168253&semt=ais_hybrid&w=740"
+                  src="src/assets/img/about/about-1-1(4).png"
                   style={{ width: "350px", height: "500px", objectFit: "cover", borderRadius: "10px" }}
                   alt="Tyres & Lubricants"
                   className="img2"
