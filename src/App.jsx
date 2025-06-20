@@ -1,13 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
 import Routing from './routes/routing'
-import CategoriesComponent from './components/CatagoriesComponent'
 import { Provider } from 'react-redux'
 import store from './features/store/Store'
 import { Toaster } from 'react-hot-toast'
+import ScrollToTop from './utils/ScrollToTop'
+
 
 
 function App() {
@@ -17,6 +14,7 @@ function App() {
     <>
       <Provider store={store}>
         <Toaster position="top-center" reverseOrder={false} />
+        <ScrollToTop/>
         <Routing />
       </Provider>
 

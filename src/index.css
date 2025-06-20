@@ -2391,6 +2391,7 @@ a.text-theme:hover,
 }
 .will-sticky .sticky-active.active {
   top: 0;
+  
 }
 .will-sticky .sticky-active.active .menu-area {
   margin-bottom: 0;
