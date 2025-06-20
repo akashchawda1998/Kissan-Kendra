@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Slider from "react-slick";
@@ -19,6 +19,22 @@ const Navbar = () => {
   const handleToggleMobileMenu = () => {
     setShowMobileMenu(prev => !prev);
   };
+  const headerRef = useRef(null);
+  const stickyRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        headerRef.current.classList.add("will-sticky");
+        if (stickyRef.current) stickyRef.current.classList.add("sticky-active");
+      } else {
+        headerRef.current.classList.remove("will-sticky");
+        if (stickyRef.current) stickyRef.current.classList.remove("sticky-active");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -116,7 +132,7 @@ const Navbar = () => {
       </div> 
 
       {/* Header Section */}
-      <header className="vs-header header-layout1">
+      <header ref={headerRef} className="vs-header header-layout1">
         <div className="header-top">
           <div className="container-fluid">
             <div className="row justify-content-between">
@@ -150,7 +166,7 @@ const Navbar = () => {
 
         {/* Sticky Menu */}
         <div className="sticky-wrapper">
-          <div className="sticky-active">
+          <div ref={stickyRef} className="sticky-active">
             <div className="menu-area">
               <div className="container-fluid">
                 <div className="row align-items-center justify-content-between">
