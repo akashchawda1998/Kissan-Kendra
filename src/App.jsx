@@ -1,5 +1,5 @@
 import './App.css'
-import Routing from './routes/routing'
+import Routing from './routes/Routing'
 import { Provider } from 'react-redux'
 import store from './features/store/Store'
 import { Toaster } from 'react-hot-toast'
