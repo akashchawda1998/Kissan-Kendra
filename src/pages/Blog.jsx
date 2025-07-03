@@ -1,6 +1,6 @@
 import React from 'react'
 import ComingSoon from '../components/ComingSoon'
-import BlogContent from '../components/Blogcontent'
+import BlogContent from '../components/BlogContent'
 import Breadcrumb from '../components/BreadCrumb'
 
 const Blog = () => {
