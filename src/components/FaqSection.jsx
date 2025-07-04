@@ -33,7 +33,7 @@ const faqItems = [
 
 const FaqSection = () => {
   return (
-    <section className="faq-layout1 space-bottom">
+    <section className="faq-layout1 ">
       <div className="container">
         <div className="row gx-5">
           {/* FAQ Text Content */}
@@ -49,9 +49,8 @@ const FaqSection = () => {
                   <div className="accordion-item" key={item.id}>
                     <h2 className="accordion-header">
                       <button
-                        className={`accordion-button ${
-                          item.show ? "" : "collapsed"
-                        }`}
+                        className={`accordion-button ${item.show ? "" : "collapsed"
+                          }`}
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target={`#${item.id}`}
@@ -63,9 +62,8 @@ const FaqSection = () => {
                     </h2>
                     <div
                       id={item.id}
-                      className={`accordion-collapse collapse ${
-                        item.show ? "show" : ""
-                      }`}
+                      className={`accordion-collapse collapse ${item.show ? "show" : ""
+                        }`}
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">{item.answer}</div>
@@ -78,42 +76,42 @@ const FaqSection = () => {
 
           {/* FAQ Image */}
           <div className="col-lg-6">
-  <div className="faq-img" style={{ position: "relative" }}>
-    {/* First image - cover */}
-    <div className="faq-img1" style={{ height: "300px", overflow: "hidden" }}>
-      <img
-        src="src/assets/img/faq/faq-1-1.jpg"
-        alt="faq 1"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center",
-        }}
-      />
-    </div>
+            <div className="faq-img" style={{ position: "relative" }}>
+              {/* First image - cover */}
+              <div className="faq-img1" style={{ height: "300px", overflow: "hidden" }}>
+                <img
+                  src="src/assets/img/faq/faq-1-1.png"
+                  alt="faq 1"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                />
+              </div>
 
-    {/* Second image - cover */}
-    <div className="faq-img2" style={{ height: "300px", overflow: "hidden", marginTop: "15px" }}>
-      <img
-        src="src/assets/img/faq/faq-1-2.jpg"
-        alt="faq 2"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center",
-        }}
-      />
-    </div>
+              {/* Second image - cover */}
+              <div className="faq-img2" style={{ height: "300px", overflow: "hidden", marginTop: "15px" }}>
+                <img
+                  src="src/assets/img/faq/faq-1-2.png"
+                  alt="faq 2"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                />
+              </div>
 
-    {/* Text/image box - untouched */}
-    <div className="media-box1" >
+              {/* Text/image box - untouched */}
+              {/* <div className="media-box1" >
       <span className="media-info">100%</span>
       <p className="media-text">client satisfaction</p>
-    </div>
-  </div>
-</div>
+    </div> */}
+            </div>
+          </div>
 
         </div>
       </div>

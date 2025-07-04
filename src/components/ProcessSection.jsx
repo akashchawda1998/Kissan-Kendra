@@ -105,7 +105,7 @@ const ProcessSection = () => {
         className="shape-mockup moving z-index d-none d-xl-block"
         style={{ left: '0%', top: '5%' }}
       >
-        <img src="src/assets/img/shep/process-shep-1.png" alt="shapes" />
+        {/* <img src="src/assets/img/shep/process-shep-1.png" alt="shapes" /> */}
       </div>
     </section>
   );

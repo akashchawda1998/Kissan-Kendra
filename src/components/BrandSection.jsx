@@ -4,14 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const brandLogos = [
-  "https://kisaankendra.in/wp-content/uploads/2024/03/download.png",
-  "https://kisaankendra.in/wp-content/uploads/2024/03/CEAT_Tyres_Ltd-540x179.png",
-  "https://kisaankendra.in/wp-content/uploads/2024/03/RGB_LOGO_APOLLO_TYRES_COMPACT_POS_GTD-540x207.jpg",
-  "https://kisaankendra.in/wp-content/uploads/2024/03/JK-Tyre-logo-2700x700-1-540x120.png",
-  "https://kisaankendra.in/wp-content/uploads/2024/03/download.png",
-  "https://kisaankendra.in/wp-content/uploads/2024/03/CEAT_Tyres_Ltd-540x179.png",
-  "https://kisaankendra.in/wp-content/uploads/2024/03/RGB_LOGO_APOLLO_TYRES_COMPACT_POS_GTD-540x207.jpg",
-  "https://kisaankendra.in/wp-content/uploads/2024/03/JK-Tyre-logo-2700x700-1-540x120.png",
+"src/assets/img/brand/brand-1.png",
+"src/assets/img/brand/brand-2.png",
+"src/assets/img/brand/brand-3.png",
+"src/assets/img/brand/brand-4.png",
+"src/assets/img/brand/brand-5.png",
+"src/assets/img/brand/brand-6.png",
+"src/assets/img/brand/brand-7.png",
+"src/assets/img/brand/brand-8.png",
+
 ];
 
 const settings = {

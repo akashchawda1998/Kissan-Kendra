@@ -88,7 +88,7 @@ const CounterSection = () => {
                 <div className="media-inner">
                   <div className="media-icon">
                     <div className="icon">
-                      <img src={counter.icon} alt="counter-icon" />
+                      <img src={counter.icon} alt="counter-icon" style={{height:"35px"}} />
                     </div>
                   </div>
                   <div className="media-counter">

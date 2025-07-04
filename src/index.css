@@ -3,6 +3,9 @@
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
 
 /*
 Template Name: Farmix
@@ -819,9 +822,64 @@ textarea.is-invalid {
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
+/* Stylish Mobile Navbar Enhancements */
+@media (max-width: 991px) {
+  .vs-menu-wrapper {
+    background: rgba(30, 41, 59, 0.85) !important;
+    backdrop-filter: blur(6px);
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+  .vs-menu-wrapper .vs-menu-area {
+    border-radius: 0 18px 18px 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    background: #fff;
+    margin: 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    min-height: 100vh;
+    transition: left 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  .vs-menu-wrapper .mobile-logo img {
+    max-width: 120px;
+    margin: 0 auto 18px auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .vs-mobile-menu ul li a {
+    font-size: 18px;
+    padding: 18px 0 18px 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    color: #222;
+    font-weight: 600;
+    background: linear-gradient(90deg, #f8fafc 0%, #e0e7ef 100%);
+    transition: background 0.2s, color 0.2s;
+  }
+  .vs-mobile-menu ul li a:hover, .vs-mobile-menu ul li.vs-active > a {
+    background: linear-gradient(90deg, #0c7735 0%, #e0e7ef 100%);
+    color: #1e293b;
+  }
+  .vs-menu-toggle {
+    background:var(--theme-color);
+    color: #222 !important;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    font-size: 28px !important;
+    width: 44px !important;
+    height: 44px !important;
+    top: 18px !important;
+    right: 18px !important;
+    transition: background 0.2s, color 0.2s;
+  }
+  .vs-menu-toggle:hover {
+
+    color: #fff !important;
+  }
+}
+
 .vs-menu-wrapper .vs-menu-area {
   width: 100%;
-  max-width: 310px;
+  max-width: 410px;
   background-color: var(--body-bg);
   border-right: 3px solid var(--theme-color);
   height: 100%;
@@ -832,6 +890,7 @@ textarea.is-invalid {
   transition: all ease 1s;
   z-index: 1;
 }
+
 .vs-menu-wrapper.vs-body-visible {
   opacity: 1;
   visibility: visible;
@@ -844,7 +903,7 @@ textarea.is-invalid {
 
 .vs-mobile-menu {
   overflow-y: scroll;
-  max-height: calc(100vh - 200px);
+  max-height: 100vh;
   padding-bottom: 40px;
   margin-top: 33px;
   text-align: left;
@@ -882,8 +941,10 @@ textarea.is-invalid {
   font-weight: 700;
 }
 .vs-mobile-menu ul li a:before {
-  content: "▼"; /* Unicode down arrow */
-  font-family: inherit; /* Or your icon font if using */
+   content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900; /* Unicode down arrow */
+   /* Or your icon font if using */
   position: relative;
   left: 0;
   top: 0;
@@ -2384,9 +2445,9 @@ a.text-theme:hover,
   top: 0;
   right: 0;
   left: 0;
-  background-color: var(--white-color);
+  /* background-color: var(--white-color); */
   transition: all ease 0.8s;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07);
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07); */
   z-index: 1000;
 }
 .will-sticky .sticky-active.active {
@@ -3384,6 +3445,9 @@ blockquote.vs-quote p {
   font-size: 26px;
   margin-bottom: -5px;
 }
+.blog-layout1 .blog-inner-author .text {
+  color: var(--white-color);
+}
 .blog-layout1 .blog-inner-author {
   display: flex;
   align-items: center;
@@ -3394,10 +3458,31 @@ blockquote.vs-quote p {
   position: absolute;
   width: 100%;
   height: 100%;
-  max-height: 38px;
+  max-height: 40px;
   background-color: var(--theme-color);
   right: -41px;
   z-index: -1;
+}
+@media screen and (max-width: 991px) {
+  .blog-layout1 .blog-inner-author {
+    padding-top: 20px;
+    transform: translateY(0px);
+
+  }
+  .blog-layout1 .blog-inner-author .text {
+  color: var(--title-color);
+}
+  .blog-layout1 .blog-inner-author::after {
+   content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-height: 40px;
+  background-color: var(--theme-color);
+  right: -41px;
+  z-index: -1;
+  }
+  
 }
 .blog-layout1 .blog-single {
   margin-bottom: 30px;
@@ -4853,8 +4938,8 @@ blockquote.vs-quote p {
   position: relative;
   border-radius: 50%;
   text-align: center;
-  max-width: 270px;
-  max-height: 270px;
+  max-width: 275px;
+  max-height: 278px;
   margin-bottom: 20px;
   margin: 0 auto;
 }
@@ -5175,6 +5260,7 @@ blockquote.vs-quote p {
   color: var(--black-color);
   background-color: var(--theme-color);
 }
+
 
 .media-style .media-icon {
   width: 80px;
@@ -6493,7 +6579,7 @@ blockquote.vs-quote p {
 .accordion-style1 .accordion-button:not(.collapsed):after {
   transform: rotate(0);
   content: "\f078";
-  color: var(--black-color);
+  color: var(--white);
 }
 .accordion-style1 .accordion-body {
   border-top: 1px solid var(--border-color);
@@ -8182,6 +8268,7 @@ table.variations .reset_variations {
 }
 .contact-layout1 .vs-btn {
   background-color: var(--theme-color);
+  color: var(--white-color);
 }
 .contact-layout1 .vs-btn:hover {
   background-color: var(--secondary-color);
@@ -8213,9 +8300,20 @@ table.variations .reset_variations {
 }
 .contact-layout1 .contact-left .team-media {
   padding: 35px 30px;
+  margin-top: 196px;
   border: 1px solid var(--border-color);
-  border-top: none;
+  /* border-top: none; */
 }
+@media screen and (max-width: 800px) {
+ .contact-layout1 .contact-left .team-media {
+  padding: 35px 30px;
+  margin-top: 30px;
+  border: 1px solid var(--border-color);
+  /* border-top: none; */
+}
+  
+}
+
 .contact-layout1 .contact-left .team-media .media-style1 {
   padding: 25px 0px 20px;
   border-bottom: 1px solid var(--border-color);
@@ -8690,5 +8788,6 @@ table.variations .reset_variations {
     padding-top: 0;
   }
 }
+
 
 /*# sourceMappingURL=style.css.map */

@@ -37,9 +37,9 @@ const WhatWeProvide = () => {
 
   return (
     <section
-      className="provide-layout1 space"
+      className="provide-layout1 space my-5"
       style={{
-        backgroundImage: "url('src/assets/img/bg/provide-bg-1.jpg')",
+        backgroundImage: "url('src/assets/img/bg/provide-bg-1.png')",
         backgroundSize: "cover",
       }}
     >

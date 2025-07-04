@@ -60,15 +60,15 @@ const Home = () => {
                 <img
                   src="src/assets/img/about/about-1-2(2).png"
                   alt="Tractor"
-                  style={{ width: "350px", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+                  style={{height:"450px", objectFit: "cover", borderRadius: "10px" }}
                   className="img1"
                 />
-                <img
+                {/* <img
                   src="src/assets/img/about/about-1-1(4).png"
                   style={{ width: "350px", height: "500px", objectFit: "cover", borderRadius: "10px" }}
                   alt="Tyres & Lubricants"
                   className="img2"
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -79,9 +79,9 @@ const Home = () => {
 
       {/* <ProductSection /> */}
       <WhatWeProvide />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <FaqSection />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <BlogSection />
       <BrandsSection />
 

@@ -6,32 +6,32 @@ import "slick-carousel/slick/slick-theme.css";
 const categories = [
   {
     title: "Tractors",
-    image: "https://kisaankendra.in/wp-content/uploads/2024/05/tractor.png",
+    image: "src/assets/img/catagory-Logo/tractor.png",
     link: "tractor",
   },
   {
     title: "Batteries",
-    image: "https://kisaankendra.in/wp-content/uploads/2024/05/battery.png",
+    image: "src/assets/img/catagory-Logo/batteries.png",
     link: "batteries",
   },
   {
     title: "Motors",
-    image: "https://kisaankendra.in/wp-content/uploads/2024/05/motor.png",
+    image: "src/assets/img/catagory-Logo/engine.png",
     link: "motors",
   },
   {
     title: "Tyres",
-    image: "https://kisaankendra.in/wp-content/uploads/2024/05/wheel-1.png",
+    image: "src/assets/img/catagory-Logo/tyre.png",
     link: "tyres",
   },
   {
     title: "Axe",
-    image: "https://kisaankendra.in/wp-content/uploads/2024/05/axe.png",
+    image: "src/assets/img/catagory-Logo/axe.png",
     link: "axe",
   },
   {
     title: "Batteries",
-    image: "https://kisaankendra.in/wp-content/uploads/2024/05/battery.png",
+    image: "src/assets/img/catagory-Logo/batteries.png",
     link: "batteries",
   },
 ];

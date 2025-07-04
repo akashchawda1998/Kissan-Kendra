@@ -85,7 +85,7 @@ const ContactSection = () => {
           {/* Right Column - Contact Info */}
           <div className="col-xl-4 col-lg-5">
             <div className="contact-left">
-              <div className="auther-inner">
+              {/* <div className="auther-inner">
                 <div className="auther-img">
                   <img
                     src="src/assets/img/about/about-author.png"
@@ -100,7 +100,7 @@ const ContactSection = () => {
                     alt="contact"
                   />
                 </div>
-              </div>
+              </div> */}
 
               <div className="team-media">
                 <h2 className="contact-title">Professional Skills</h2>
@@ -156,7 +156,7 @@ const ContactSection = () => {
         {/* Google Map */}
         <div className="map mt-4">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29518.147468872132!2d90.35144910000001!3d22.362370900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1725012606149!5m2!1sen!2sbd"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235527.49482607495!2d75.69903738855072!3d22.72388828988633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1751607583739!5m2!1sen!2sin"
             width="100%"
             height="450"
             style={{ border: 0 }}

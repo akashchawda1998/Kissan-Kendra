@@ -162,7 +162,7 @@ const settings = {
 const HistorySection = () => {
   return (
     <div className="history-layout1 mb-40 "  style={{
-        backgroundImage: 'url(src/assets/img/bg/history-bg-1.jpg)',
+        // backgroundImage: 'url(src/assets/img/bg/history-bg-1.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
