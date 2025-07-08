@@ -15,7 +15,7 @@ const About = () => {
         paths={[{ name: "About Us" }]}/>
     {/* <AboutSection/> */}
     <ProcessSection/>
-    <HistorySection/>
+    {/* <HistorySection/> */}
     <CounterSection/>
     <AboutTestimonial/>
     <BrandsSection/>

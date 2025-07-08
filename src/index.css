@@ -818,6 +818,11 @@ textarea.is-invalid {
   background-color: var(--theme-color);
   border-radius: 50%;
 }
+.vs-menu-toggle, .vs-menu-toggle.d-inline-block {
+  background: white !important;
+
+}
+
 .vs-menu-wrapper .vs-menu-toggle:hover {
   background-color: var(--secondary-color);
   color: var(--white-color);
@@ -860,10 +865,10 @@ textarea.is-invalid {
     color: #1e293b;
   }
   .vs-menu-toggle {
-    background:var(--theme-color);
+    /* background:var(--); */
     color: #222 !important;
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.10); */
     font-size: 28px !important;
     width: 44px !important;
     height: 44px !important;
@@ -3458,7 +3463,7 @@ blockquote.vs-quote p {
   position: absolute;
   width: 100%;
   height: 100%;
-  max-height: 40px;
+  max-height: 55px;
   background-color: var(--theme-color);
   right: -41px;
   z-index: -1;
@@ -4050,11 +4055,22 @@ blockquote.vs-quote p {
 .hero-layout2 {
   background-color: var(--smoke-color);
   position: relative;
+ 
   overflow: hidden;
 }
 .hero-layout2 .hero-slide {
   padding: 60px 0 30px;
+   height: 80vh;
 }
+@media screen and (max-width: 800px) {
+  .hero-layout2 .hero-slide {
+    padding: 60px 0 30px;
+    height: 40vh;
+    margin-top: 40px;
+  }
+}
+
+
 .hero-layout2 .hero-content {
   text-align: left;
 }
@@ -5562,8 +5578,8 @@ blockquote.vs-quote p {
 /* Large devices */
 @media (max-width: 1199px) {
   .categorie-style1 .categorie-img {
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
     line-height: 130px;
   }
 }

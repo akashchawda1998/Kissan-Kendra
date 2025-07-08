@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <HeroSlider />
       <CategoriesCarousel />
-      <section className="about-layout2 space-bottom" style={{ marginTop: "50px" }}>
+      <section className="about-layout2 " style={{ marginTop: "50px" }}>
         <div className="container">
           <div className="row gx-5">
             <div className="col-lg-6">
@@ -32,7 +32,7 @@ const Home = () => {
 
                 <div className="bottom-info">
                   <div className="text-box">
-                    <h6 className="nunber">2+</h6>
+                    <h6 className="nunber " style={{fontSize:"6rem", fontFamily:"serif"}}>2+</h6>
                     <span className="experience">
                       years of <br />
                       excellence

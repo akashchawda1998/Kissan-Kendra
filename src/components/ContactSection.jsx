@@ -103,7 +103,7 @@ const ContactSection = () => {
               </div> */}
 
               <div className="team-media">
-                <h2 className="contact-title">Professional Skills</h2>
+                <h2 className="contact-title">Contact Us</h2>
 
                 <div className="media-style1">
                   <div className="media-icon">

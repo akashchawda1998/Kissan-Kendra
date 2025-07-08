@@ -37,35 +37,35 @@ const categories = [
 ];
 
 const CategoriesCarousel = () => {
- const settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  speed: 600,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  centerMode: false, // Disable to prevent partial logos
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: { slidesToShow: 6},
-    },
-    {
-      breakpoint: 992,
-      settings: { slidesToShow: 3 },
-    },
-    {
-      breakpoint: 768,
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 480,
-      settings: { slidesToShow: 1 },
-    },
-  ],
-};
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 600,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    centerMode: false, // Disable to prevent partial logos
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: { slidesToShow: 6 },
+      },
+      {
+        breakpoint: 992,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 2 },
+      },
+    ],
+  };
 
 
   return (
@@ -92,14 +92,15 @@ const CategoriesCarousel = () => {
                       src={item.image}
                       alt={item.title}
                       style={{
-                        width: "150px",
-                        height: "150px",
+                        width: "100%",
+                        maxWidth: "120px", // Limit max size for large screens
+                        height: "auto",
                         objectFit: "contain",
                         margin: "0 auto",
-                        padding: "15px",
-                        borderRadius: "50%",
+                        padding: "10px",
                       }}
                     />
+
                   </a>
                 </div>
                 <div className="categorie-content">

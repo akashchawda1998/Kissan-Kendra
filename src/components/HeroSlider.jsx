@@ -19,7 +19,7 @@ const HeroSlider = () => {
   ];
 
   return (
-    <div className="hero-layout2 " style={{ height: "80vh" }}>
+    <div className="hero-layout2 ">
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect="fade"
@@ -36,7 +36,7 @@ const HeroSlider = () => {
                 backgroundImage: `url(${slide.img})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                minHeight: "80vh",
+              
               }}
             >
               <div className="container">
