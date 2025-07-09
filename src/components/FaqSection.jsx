@@ -1,4 +1,6 @@
 import React from "react";
+import faqImg1 from "../assets/img/faq/faq-1-1.png";
+import faqImg2 from "../assets/img/faq/faq-1-2.png";
 
 const faqItems = [
   {
@@ -33,7 +35,7 @@ const faqItems = [
 
 const FaqSection = () => {
   return (
-    <section className="faq-layout1 ">
+    <section className="faq-layout1">
       <div className="container">
         <div className="row gx-5">
           {/* FAQ Text Content */}
@@ -45,12 +47,13 @@ const FaqSection = () => {
 
             <div className="accordion-style1">
               <div className="accordion" id="accordionExample">
-                {faqItems.map((item, index) => (
+                {faqItems.map((item) => (
                   <div className="accordion-item" key={item.id}>
                     <h2 className="accordion-header">
                       <button
-                        className={`accordion-button ${item.show ? "" : "collapsed"
-                          }`}
+                        className={`accordion-button ${
+                          item.show ? "" : "collapsed"
+                        }`}
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target={`#${item.id}`}
@@ -62,8 +65,9 @@ const FaqSection = () => {
                     </h2>
                     <div
                       id={item.id}
-                      className={`accordion-collapse collapse ${item.show ? "show" : ""
-                        }`}
+                      className={`accordion-collapse collapse ${
+                        item.show ? "show" : ""
+                      }`}
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">{item.answer}</div>
@@ -74,13 +78,16 @@ const FaqSection = () => {
             </div>
           </div>
 
-          {/* FAQ Image */}
+          {/* FAQ Image Section */}
           <div className="col-lg-6">
             <div className="faq-img" style={{ position: "relative" }}>
-              {/* First image - cover */}
-              <div className="faq-img1" style={{ height: "300px", overflow: "hidden" }}>
+              {/* First image */}
+              <div
+                className="faq-img1"
+                style={{ height: "300px", overflow: "hidden" }}
+              >
                 <img
-                  src="src/assets/img/faq/faq-1-1.png"
+                  src={faqImg1}
                   alt="faq 1"
                   style={{
                     width: "100%",
@@ -91,10 +98,17 @@ const FaqSection = () => {
                 />
               </div>
 
-              {/* Second image - cover */}
-              <div className="faq-img2" style={{ height: "300px", overflow: "hidden", marginTop: "15px" }}>
+              {/* Second image */}
+              <div
+                className="faq-img2"
+                style={{
+                  height: "300px",
+                  overflow: "hidden",
+                  marginTop: "15px",
+                }}
+              >
                 <img
-                  src="src/assets/img/faq/faq-1-2.png"
+                  src={faqImg2}
                   alt="faq 2"
                   style={{
                     width: "100%",
@@ -104,15 +118,8 @@ const FaqSection = () => {
                   }}
                 />
               </div>
-
-              {/* Text/image box - untouched */}
-              {/* <div className="media-box1" >
-      <span className="media-info">100%</span>
-      <p className="media-text">client satisfaction</p>
-    </div> */}
             </div>
           </div>
-
         </div>
       </div>
     </section>

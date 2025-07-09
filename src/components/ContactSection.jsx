@@ -1,5 +1,11 @@
 import React from "react";
 
+// Import icon images
+import iconPhone from "../assets/img/icon/icon-1-1.png";
+import iconEmail from "../assets/img/icon/icon-1-2.png";
+// If you want to use location icon, import it as well:
+// import iconLocation from "src/assets/img/icon/icon-1-3.png";
+
 const ContactSection = () => {
   return (
     <section className="contact-layout1 space">
@@ -85,6 +91,7 @@ const ContactSection = () => {
           {/* Right Column - Contact Info */}
           <div className="col-xl-4 col-lg-5">
             <div className="contact-left">
+              {/* Uncomment and import images if you want to show author info */}
               {/* <div className="auther-inner">
                 <div className="auther-img">
                   <img
@@ -107,7 +114,7 @@ const ContactSection = () => {
 
                 <div className="media-style1">
                   <div className="media-icon">
-                    <img src="src/assets/img/icon/icon-1-1.png" alt="icon" />
+                    <img src={iconPhone} alt="icon" />
                   </div>
                   <div className="media-body">
                     <h3 className="media-title">Phone No:</h3>
@@ -120,7 +127,7 @@ const ContactSection = () => {
 
                 <div className="media-style1">
                   <div className="media-icon">
-                    <img src="src/assets/img/icon/icon-1-2.png" alt="icon" />
+                    <img src={iconEmail} alt="icon" />
                   </div>
                   <div className="media-body">
                     <h3 className="media-title">Email Address:</h3>
@@ -136,15 +143,15 @@ const ContactSection = () => {
                   </div>
                 </div>
 
+                {/* Uncomment if you want to show location info */}
                 {/* <div className="media-style1">
                   <div className="media-icon">
-                    <img src="src/assets/img/icon/icon-1-3.png" alt="icon" />
+                    <img src={iconLocation} alt="icon" />
                   </div>
                   <div className="media-body">
                     <h3 className="media-title">Location:</h3>
                     <p className="media-info">
-                      5919 Trussville Crossings Pkwy, Birmingham, United
-                      Kingdom
+                      5919 Trussville Crossings Pkwy, Birmingham, United Kingdom
                     </p>
                   </div>
                 </div> */}

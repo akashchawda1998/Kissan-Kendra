@@ -1,37 +1,51 @@
 import React from "react";
-import { FaTractor, FaTools, FaPhoneAlt, FaOilCan, FaCogs, FaWrench } from "react-icons/fa";
+import {
+  FaTractor,
+  FaTools,
+  FaPhoneAlt,
+  FaOilCan,
+  FaCogs,
+  FaWrench,
+} from "react-icons/fa";
+import provideBg from "../assets/img/bg/provide-bg-1.png";
 
 const WhatWeProvide = () => {
   const services = [
     {
       icon: <FaTractor size={40} color="#4CAF50" />,
       title: "High-Quality Tractor Tyres",
-      description: "Robust tyres designed for heavy-duty farming, ensuring better grip, fuel efficiency, and longer life on all terrains.",
+      description:
+        "Robust tyres designed for heavy-duty farming, ensuring better grip, fuel efficiency, and longer life on all terrains.",
     },
     {
       icon: <FaTools size={40} color="#2196F3" />,
       title: "Durable Agricultural Tractors",
-      description: "We offer efficient, long-lasting tractors built to perform even in the toughest field conditions for daily farm use.",
+      description:
+        "We offer efficient, long-lasting tractors built to perform even in the toughest field conditions for daily farm use.",
     },
     {
       icon: <FaPhoneAlt size={40} color="#FF9800" />,
       title: "Expert Customer Support",
-      description: "Our experienced team assists with product guidance, maintenance tips, and after-sales service to keep you productive.",
+      description:
+        "Our experienced team assists with product guidance, maintenance tips, and after-sales service to keep you productive.",
     },
     {
       icon: <FaOilCan size={40} color="#E91E63" />,
       title: "Premium Engine Oils",
-      description: "Top-grade oils that reduce engine wear, control sludge, and enhance engine life for tractors and farm machines.",
+      description:
+        "Top-grade oils that reduce engine wear, control sludge, and enhance engine life for tractors and farm machines.",
     },
     {
       icon: <FaCogs size={40} color="#9C27B0" />,
       title: "Advanced Lubricants",
-      description: "Our lubricants reduce friction, support high-performance output, and protect internal parts under extreme conditions.",
+      description:
+        "Our lubricants reduce friction, support high-performance output, and protect internal parts under extreme conditions.",
     },
     {
       icon: <FaWrench size={40} color="#795548" />,
       title: "Affordable Spare Parts",
-      description: "We provide genuine and budget-friendly spare parts for tractors and equipment, ensuring quick repairs and uptime.",
+      description:
+        "We provide genuine and budget-friendly spare parts for tractors and equipment, ensuring quick repairs and uptime.",
     },
   ];
 
@@ -39,8 +53,10 @@ const WhatWeProvide = () => {
     <section
       className="provide-layout1 space my-5"
       style={{
-        backgroundImage: "url('src/assets/img/bg/provide-bg-1.png')",
+        backgroundImage: `url(${provideBg})`,
         backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="container">

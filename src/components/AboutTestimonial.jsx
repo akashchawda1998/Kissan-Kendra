@@ -1,23 +1,28 @@
 import React from "react";
 
+// Import images
+import testiImg1 from "../assets/img/testimonial/testi-img-1-1.png";
+import testiMainImg from "../assets/img/testimonial/testi-img.png";
+import shapeImg from "../assets/img/shep/testmonial-shep-1.png";
+
 const testimonials = [
   {
     name: "Ramesh Patel",
     designation: "Farmer from Indore",
     text: `I recently purchased a tractor and battery from this store. The quality is top-notch and the service was excellent. Highly recommended for any agricultural needs!`,
-    image: "src/assets/img/testimonial/testi-img-1-1.png",
+    image: testiImg1,
   },
   {
     name: "Sunita Meena",
     designation: "Farm Business Owner",
     text: `We bought multiple tractor tyres and an advanced harvesting machine. Everything was delivered on time and works perfectly. Very trustworthy service.`,
-    image: "src/assets/img/testimonial/testi-img-1-1.png",
+    image: testiImg1,
   },
   {
     name: "Mukesh Yadav",
     designation: "Organic Farm Consultant",
     text: `Their battery range is long-lasting and ideal for farm vehicles. Plus, they offer genuine parts and great customer support. Will shop again!`,
-    image: "src/assets/img/testimonial/testi-img-1-1.png",
+    image: testiImg1,
   },
 ];
 
@@ -33,6 +38,7 @@ const AboutTestimonial = () => {
               <h2 className="sec-title">What Our Customers Say About Us</h2>
             </div>
 
+            {/* TODO: Replace with actual carousel (e.g., react-slick or Swiper) */}
             <div
               className="vs-carousel"
               data-arrows="false"
@@ -45,7 +51,7 @@ const AboutTestimonial = () => {
                 <div className="testi-style1" key={index}>
                   <div className="auther-inner">
                     <div className="auther-img">
-                      <img src={testimonial.image} alt="testimonial" />
+                      <img src={testimonial.image} alt={`Testimonial of ${testimonial.name}`} />
                       <div className="testi-icon">
                         <i className="far fa-quote-left"></i>
                       </div>
@@ -69,7 +75,7 @@ const AboutTestimonial = () => {
           {/* Right Image Column */}
           <div className="col-lg-6">
             <div className="testi-img">
-              <img src="src/assets/img/testimonial/testi-img.png" alt="testimonial" />
+              <img src={testiMainImg} alt="Customer testimonials" />
             </div>
           </div>
         </div>
@@ -80,7 +86,7 @@ const AboutTestimonial = () => {
         className="shape-mockup moving z-index-n1 d-none d-xl-block"
         style={{ right: "0%", bottom: "5%" }}
       >
-        <img src="src/assets/img/shep/testmonial-shep-1.png" alt="shapes" />
+        <img src={shapeImg} alt="Decorative shapes" />
       </div>
     </section>
   );

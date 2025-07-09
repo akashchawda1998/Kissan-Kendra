@@ -1,27 +1,35 @@
 import React, { useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Import images instead of using raw paths
+import bgImage from '../assets/img/about/about-bg-agriculture.jpg';
+import titleLogo from '../assets/img/icon/title-logo.png';
+import icon1 from '../assets/img/icon/counter-icon1.png';
+import icon2 from '../assets/img/icon/counter-icon2.png';
+import icon3 from '../assets/img/icon/counter-icon3.png';
+import icon4 from '../assets/img/icon/counter-icon4.png';
+
 const countersData = [
   {
-    icon: 'src/assets/img/icon/counter-icon1.png',
+    icon: icon1,
     count: 1200,
     suffix: <i className="far fa-plus"></i>,
     text: 'Tractor Tyres Sold',
   },
   {
-    icon: 'src/assets/img/icon/counter-icon2.png',
+    icon: icon2,
     count: 100,
     suffix: <i className="far fa-percent"></i>,
     text: 'Customer Satisfaction',
   },
   {
-    icon: 'src/assets/img/icon/counter-icon3.png',
+    icon: icon3,
     count: 500,
     suffix: <i className="far fa-plus"></i>,
     text: 'Lubricant Deliveries',
   },
   {
-    icon: 'src/assets/img/icon/counter-icon4.png',
+    icon: icon4,
     count: 250,
     suffix: <i className="far fa-plus"></i>,
     text: 'Tractor Owners Served',
@@ -32,46 +40,49 @@ const CounterSection = () => {
   const countersRef = useRef([]);
 
   useEffect(() => {
+    const intervals = [];
+
     countersRef.current.forEach((el, index) => {
       let current = 0;
       const target = countersData[index].count;
-      const increment = Math.ceil(target / 100);
+      const increment = Math.max(1, Math.ceil(target / 100));
 
       const updateCounter = () => {
         current += increment;
         if (current >= target) {
           el.innerText = target;
-          clearInterval(timer);
+          clearInterval(intervals[index]);
         } else {
           el.innerText = current;
         }
       };
 
-      const timer = setInterval(updateCounter, 20);
+      intervals[index] = setInterval(updateCounter, 20);
     });
+
+    // Cleanup intervals on unmount
+    return () => intervals.forEach((timer) => clearInterval(timer));
   }, []);
 
   return (
     <section
-      className="counter-layout1 space"
+      className="counter-layout1 space py-5"
       style={{
-        backgroundImage: 'url(src/assets/img/about/about-bg-agriculture.jpg',
+        backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        color: '#fff',
       }}
     >
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-7">
-            <div
-              className="title-area text-center wow fadeInUp wow-animated"
-              data-wow-delay="0.3s"
-            >
-              <div className="title-img">
-                <img src="src/assets/img/icon/title-logo.png" alt="title logo" />
+        <div className="row justify-content-center mb-5">
+          <div className="col-lg-8 text-center">
+            <div className="title-area wow fadeInUp" data-wow-delay="0.3s">
+              <div className="title-img mb-3">
+                <img src={titleLogo} alt="title logo" style={{ height: '40px' }} />
               </div>
               <h2 className="sec-title">Driving Agriculture Forward</h2>
-              <span className="sec-subtitle">
+              <span className="sec-subtitle d-block mb-3">
                 Empowering farmers with premium tyres, oils, and expert service
               </span>
               <a href="#" className="vs-btn">
@@ -81,28 +92,24 @@ const CounterSection = () => {
           </div>
         </div>
 
-        <div className="row z-index-common g-5 justify-content-lg-between justify-content-center">
+        <div className="row g-4 justify-content-center">
           {countersData.map((counter, index) => (
-            <div className="col-xl-auto col-lg-4 col-md-6" key={index}>
+            <div className="col-xl-auto col-lg-4 col-md-6 text-center" key={index}>
               <div className="media-style">
                 <div className="media-inner">
-                  <div className="media-icon">
-                    <div className="icon">
-                      <img src={counter.icon} alt="counter-icon" style={{height:"35px"}} />
-                    </div>
+                  <div className="media-icon mb-3">
+                    <img src={counter.icon} alt="counter icon" style={{ height: '40px' }} />
                   </div>
-                  <div className="media-counter">
-                    <div className="media-count">
-                      <h2
-                        className="media-title counter-number"
-                        ref={(el) => (countersRef.current[index] = el)}
-                      >
-                        {counter.count}
-                      </h2>
-                      <span className="media-count_icon">{counter.suffix}</span>
-                    </div>
-                    <p className="media-text">{counter.text}</p>
+                  <div className="media-counter d-flex align-items-center justify-content-center">
+                    <h2
+                      className="media-title counter-number mb-0"
+                      ref={(el) => (countersRef.current[index] = el)}
+                    >
+                      0
+                    </h2>
+                    <span className="media-count_icon ms-2">{counter.suffix}</span>
                   </div>
+                  <p className="media-text mt-2">{counter.text}</p>
                 </div>
               </div>
             </div>
@@ -110,12 +117,10 @@ const CounterSection = () => {
         </div>
       </div>
 
-      <div
-        className="shape-mockup moving z-index d-none d-lg-block"
-        style={{ right: '8%', bottom: '22%' }}
-      >
-        {/* <img src="src/assets/img/shep/about-shep-1.png" alt="shapes" /> */}
-      </div>
+      {/* Optional Shape Layer */}
+      {/* <div className="shape-mockup moving z-index d-none d-lg-block" style={{ right: '8%', bottom: '22%' }}>
+        <img src="src/assets/img/shep/about-shep-1.png" alt="shapes" />
+      </div> */}
     </section>
   );
 };
