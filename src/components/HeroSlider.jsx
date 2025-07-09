@@ -3,23 +3,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
+import img1 from "../assets/banner2.png";
+import img2 from "../assets/img/hero/hero-img-2-2.png";
+import img3 from "../assets/img/hero/hero-img-2-3.png";
 import { Autoplay, EffectFade } from "swiper/modules";
 
 const HeroSlider = () => {
   const slides = [
-    {
-      img: "src/assets/banner2.png",
-    },
-    {
-      img: "src/assets/img/hero/hero-img-2-2.png",
-    },
-    {
-      img: "src/assets/img/hero/hero-img-2-3.png",
-    },
+    { img: img1 },
+    { img: img2 },
+    { img: img3 },
   ];
 
   return (
-    <div className="hero-layout2 ">
+    <div className="hero-layout2">
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect="fade"
@@ -36,7 +33,6 @@ const HeroSlider = () => {
                 backgroundImage: `url(${slide.img})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-              
               }}
             >
               <div className="container">

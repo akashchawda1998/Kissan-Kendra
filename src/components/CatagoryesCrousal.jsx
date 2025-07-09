@@ -3,37 +3,22 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// Image Imports
+import tractorImg from "../assets/img/catagory-Logo/tractor.png";
+import batteriesImg from "../assets/img/catagory-Logo/batteries.png";
+import motorsImg from "../assets/img/catagory-Logo/engine.png";
+import tyresImg from "../assets/img/catagory-Logo/tyre.png";
+import axeImg from "../assets/img/catagory-Logo/axe.png";
+import titleLogo from "../assets/img/icon/title-logo.png";
+
+// Categories
 const categories = [
-  {
-    title: "Tractors",
-    image: "src/assets/img/catagory-Logo/tractor.png",
-    link: "tractor",
-  },
-  {
-    title: "Batteries",
-    image: "src/assets/img/catagory-Logo/batteries.png",
-    link: "batteries",
-  },
-  {
-    title: "Motors",
-    image: "src/assets/img/catagory-Logo/engine.png",
-    link: "motors",
-  },
-  {
-    title: "Tyres",
-    image: "src/assets/img/catagory-Logo/tyre.png",
-    link: "tyres",
-  },
-  {
-    title: "Axe",
-    image: "src/assets/img/catagory-Logo/axe.png",
-    link: "axe",
-  },
-  {
-    title: "Batteries",
-    image: "src/assets/img/catagory-Logo/batteries.png",
-    link: "batteries",
-  },
+  { title: "Tractors", image: tractorImg, link: "tractor" },
+  { title: "Batteries", image: batteriesImg, link: "batteries" },
+  { title: "Motors", image: motorsImg, link: "motors" },
+  { title: "Tyres", image: tyresImg, link: "tyres" },
+  { title: "Axe", image: axeImg, link: "axe" },
+  { title: "Batteries", image: batteriesImg, link: "batteries" },
 ];
 
 const CategoriesCarousel = () => {
@@ -46,27 +31,13 @@ const CategoriesCarousel = () => {
     autoplaySpeed: 2000,
     slidesToShow: 6,
     slidesToScroll: 1,
-    centerMode: false, // Disable to prevent partial logos
     responsive: [
-      {
-        breakpoint: 1200,
-        settings: { slidesToShow: 6 },
-      },
-      {
-        breakpoint: 992,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 2 },
-      },
+      { breakpoint: 1200, settings: { slidesToShow: 6 } },
+      { breakpoint: 992, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 480, settings: { slidesToShow: 2 } },
     ],
   };
-
 
   return (
     <section className="categorie-layout1 py-5">
@@ -74,7 +45,7 @@ const CategoriesCarousel = () => {
         <div className="title-area text-center mb-4">
           <div className="title-img mb-2">
             <img
-              src="src/assets/img/icon/title-logo.png"
+              src={titleLogo}
               alt="title logo"
               style={{ maxHeight: "30px" }}
             />
@@ -93,14 +64,13 @@ const CategoriesCarousel = () => {
                       alt={item.title}
                       style={{
                         width: "100%",
-                        maxWidth: "120px", // Limit max size for large screens
+                        maxWidth: "120px",
                         height: "auto",
                         objectFit: "contain",
                         margin: "0 auto",
                         padding: "10px",
                       }}
                     />
-
                   </a>
                 </div>
                 <div className="categorie-content">
@@ -118,4 +88,3 @@ const CategoriesCarousel = () => {
 };
 
 export default CategoriesCarousel;
-
