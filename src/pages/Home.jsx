@@ -26,7 +26,7 @@ const Home = () => {
                 className="title-area wow fadeInUp wow-animated"
                 data-wow-delay="0.3s"
               >
-                <span className="sec-subtitle">Welcome to Kissan Kendra</span>
+                <span className="sec-subtitle">Welcome to kisaan Kendra</span>
               </div>
 
               <p className="about-text">

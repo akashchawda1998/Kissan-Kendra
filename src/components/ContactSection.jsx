@@ -36,14 +36,7 @@ const ContactSection = () => {
                   className="form-style3 ajax-contact"
                 >
                   <div className="row">
-                    <div className="col-12 form-group">
-                      <textarea
-                        name="message"
-                        className="form-control"
-                        placeholder="Message"
-                        required
-                      ></textarea>
-                    </div>
+                    
                     <div className="col-md-6 form-group">
                       <input
                         name="fname"
@@ -53,6 +46,19 @@ const ContactSection = () => {
                         required
                       />
                     </div>
+
+
+                    <div className="col-md-6 form-group">
+                      <input
+                        name="fname"
+                        type="number"
+                        className="form-control"
+                        placeholder="Number"
+                        required
+                      />
+                    </div>
+
+
                     <div className="col-6 form-group">
                       <input
                         name="email"
@@ -62,6 +68,19 @@ const ContactSection = () => {
                         required
                       />
                     </div>
+
+
+                     <div className="col-6 form-group">
+                      <input
+                        name="ubject"
+                        type="text"
+                        className="form-control"
+                        placeholder="Subject"
+                        required
+                      />
+                    </div>
+
+
                     <div className="col-12">
                       <div className="custom-checkbox notice">
                         <input
@@ -75,6 +94,14 @@ const ContactSection = () => {
                           the next time I comment.
                         </label>
                       </div>
+                    </div>
+                    <div className="col-12 form-group">
+                      <textarea
+                        name="message"
+                        className="form-control"
+                        placeholder="Message"
+                        required
+                      ></textarea>
                     </div>
                     <div className="col-12 form-group">
                       <button className="vs-btn" type="submit">
@@ -118,10 +145,7 @@ const ContactSection = () => {
                   </div>
                   <div className="media-body">
                     <h3 className="media-title">Phone No:</h3>
-                    <p className="media-info">
-                      <a href="tel:+88013004451">+91 91092626365</a> <br />
-                      Mon - Sat: 09.00 to 06.00
-                    </p>
+                    
                   </div>
                 </div>
 
@@ -133,11 +157,11 @@ const ContactSection = () => {
                     <h3 className="media-title">Email Address:</h3>
                     <p className="media-info">
                       <a href="mailto:example@domain.com">
-                        info@kissankendra.in
+                        info@kisaankendra.in
                       </a>
                       <br />
                       <a href="mailto:officename@example.com">
-                        info@kissankendra.in
+                        info@kisaankendra.in
                       </a>
                     </p>
                   </div>

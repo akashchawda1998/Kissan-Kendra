@@ -63,7 +63,6 @@ const Navbar = () => {
         <div className="vs-mobile-menu">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
 
             {/* Tractors Dropdown */}
             <li className="menu-item-has-children">
@@ -97,6 +96,19 @@ const Navbar = () => {
               )}
             </li>
 
+ {/* Agriculture */}
+            <li className="menu-item-has-children">
+              <a onClick={() => toggleSubMenu("agriculture")}>
+                Agriculture 
+              </a>
+              {openMenus["agriculture"] && (
+                <ul className="sub-menu">
+                  <li><a href="/productlist?category=159">Agriculture Machine</a></li>
+                  <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
+                  <li><a href="/productlist?category=155">Agriculture Pumps</a></li>
+                </ul>
+              )}
+            </li>
             {/* Tyres Dropdown */}
             <li className="menu-item-has-children">
               <a
@@ -152,19 +164,7 @@ const Navbar = () => {
               )}
             </li>
 
-            {/* Agriculture */}
-            <li className="menu-item-has-children">
-              <a onClick={() => toggleSubMenu("agriculture")}>
-                Agriculture 
-              </a>
-              {openMenus["agriculture"] && (
-                <ul className="sub-menu">
-                  <li><a href="/productlist?category=159">Agriculture Machine</a></li>
-                  <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
-                  <li><a href="/productlist?category=155">Agriculture Pumps</a></li>
-                </ul>
-              )}
-            </li>
+           
 
             {/* Blog */}
             <li className="menu-item-has-children">
@@ -178,6 +178,9 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
+
+            <li><a href="/about">About Us</a></li>
+
 
             {/* Contact */}
             <li><a href="/contact">Contact</a></li>
@@ -196,15 +199,13 @@ const Navbar = () => {
                   <ul>
                     <li>
                       <i className="fas fa-envelope"></i>
-                      <a href="mailto:info@example.com">info@kissankendra.in</a>
+                      <a href="mailto:info@example.com">info@kisaankendra.in</a>
                     </li>
                     <li>
                       <i className="fas fa-phone-alt"></i>
                       <a href="tel:+9191092626365">+91 91092626365</a>
                     </li>
-                    <li>
-                      <i className="fas fa-clock"></i>Mon - Sat: 09.00 to 06.00
-                    </li>
+                    
                   </ul>
                 </div>
               </div>
@@ -236,7 +237,6 @@ const Navbar = () => {
                     <nav className="main-menu menu-style1 d-none d-lg-block">
                       <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
 
                         {/* Tractors Menu */}
                         <li className="menu-item-has-children">
@@ -258,6 +258,16 @@ const Navbar = () => {
                               </ul>
                             </li>                    <li><a href="/tractor/old">Old Tractors</a></li>
                             <li><a href="/tractor/parts">Tractor Parts</a></li>
+                          </ul>
+                        </li>
+                            {/* Agriculture Menu */}
+                        <li className="menu-item-has-children">
+                          <a href="/agriculture">Agriculture</a>
+                          <ul className="sub-menu">
+                            <li><a href="/productlist?category=159">Agriculture Machine</a></li>
+
+                            <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
+                            <li><a href="/productlist?category=155">Agriculture Pumps</a></li>
                           </ul>
                         </li>
 
@@ -300,25 +310,20 @@ const Navbar = () => {
                           </ul>
                         </li>
 
-                        {/* Agriculture Menu */}
-                        <li className="menu-item-has-children">
-                          <a href="/agriculture">Agriculture</a>
-                          <ul className="sub-menu">
-                            <li><a href="/productlist?category=159">Agriculture Machine</a></li>
 
-                            <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
-                            <li><a href="/productlist?category=155">Agriculture Pumps</a></li>
+<li className="menu-item-has-children">
+                          <a href="/agriculture">Agriculture Drone</a>
+                          <ul className="sub-menu">
+                            <li><a href="/productlist?category=159">New Drone</a></li>
+
+                            <li><a href="/productlist?category=157">Drone on Rent</a></li>
                           </ul>
                         </li>
+                    
 
                         {/* Blog Menu */}
-                        <li className="menu-item-has-children">
-                          <a href="/blog">Blog</a>
-                          <ul className="sub-menu">
-                            <li><a href="/blog">Blog</a></li>
-                            <li><a href="/blog-details">Blog Details</a></li> {/* Optional route */}
-                          </ul>
-                        </li>
+                                               <li><a href="/about">About Us</a></li>
+
 
                         <li><a href="/contact">Contact</a></li>
                       </ul>

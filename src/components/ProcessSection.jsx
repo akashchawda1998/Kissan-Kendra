@@ -73,7 +73,7 @@ const ProcessSection = () => {
           <div className="title-img mb-2">
             <img src={titleLogo} alt="title logo" style={{ height: '40px' }} />
           </div>
-          <span className="sec-subtitle">Welcome to Kissan Kendra</span>
+          <span className="sec-subtitle">Welcome to kisaan Kendra</span>
           <h2 className="sec-title">How We Help You Get What You Need</h2>
         </div>
 

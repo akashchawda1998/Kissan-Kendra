@@ -24,11 +24,7 @@ const Footer = () => {
                 </div>
                 <div className="media-body">
                   <h3 className="media-title">Call Us:</h3>
-                  <p className="media-info">
-                    <a href="tel:+917000000000">+91 91092626365</a>
-                    <br />
-                    Mon - Sat: 09.00 to 06.00
-                  </p>
+                 
                 </div>
               </div>
             </div>
@@ -44,7 +40,7 @@ const Footer = () => {
                   <p className="media-info">
                     <a href="mailto:support@kisaankendra.in">support@kisaankendra.in</a>
                     <br />
-                    <a href="mailto:info@kisaankendra.in">info@kissankendra.in</a>
+                    <a href="mailto:info@kisaankendra.in">info@kisaankendra.in</a>
                   </p>
                 </div>
               </div>

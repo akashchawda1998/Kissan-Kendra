@@ -67,7 +67,7 @@ const WhatWeProvide = () => {
                 className="title-area wow fadeInUp wow-animated"
                 data-wow-delay="0.3s"
               >
-                <span className="sec-subtitle">Welcome to Kissan Kendra</span>
+                <span className="sec-subtitle">Welcome to kisaan Kendra</span>
                 <h2 className="sec-title">What We Provide</h2>
               </div>
 
