@@ -74,10 +74,33 @@ const ProcessSection = () => {
             <img src={titleLogo} alt="title logo" style={{ height: '40px' }} />
           </div>
           <span className="sec-subtitle">Welcome to kisaan Kendra</span>
-          <h2 className="sec-title">How We Help You Get What You Need</h2>
+          <h2 className="sec-title">  About Us</h2>
+          <p>
+
+Welcome to Kisaan Kendra – Har Kisaan Ka Saathi! 👨‍🌾
+
+We’re your one-stop shop for all farm essentials—from tractors 🚜, batteries 🔋, agricultural machinery, to durable tractor tyres—everything you need for your farm, all at competitive prices. ✅
+
+But we’re more than just a store—we’re here to support, guide, and grow with every kisaan. Whether you're sowing your first seed or upgrading your equipment, Kisaan Kendra brings you quality products, trusted advice, and farmer-first service.
+</p>
+<p>🌾 What We Offer:</p>
+
+  <p>✅ Tractors & Implements</p>
+  <p>✅ Batteries & Farm Machinery</p>
+  <p>✅ Seeds, Fertilizers & Pesticides</p>
+<p>✅ Organic Solutions & Tractor Tyres</p>
+ 
+
+
+
+<p>📍 Real products. Real prices. Real support.
+
+Join the Kisaan Kendra family and grow with confidence.
+Because when the kisaan grows, Bharat grows! 🇮🇳
+Kisaan Kendra – Apka Apna Kisan Dost!</p>
         </div>
 
-        <Slider {...settings}>
+        {/* <Slider {...settings}>
           {processItems.map((item, index) => (
             <div key={index}>
               <div className="process-style1 text-center p-3">
@@ -104,7 +127,7 @@ const ProcessSection = () => {
               </div>
             </div>
           ))}
-        </Slider>
+        </Slider> */}
       </div>
 
       {/* Optional shape element */}

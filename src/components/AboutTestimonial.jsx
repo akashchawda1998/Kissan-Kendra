@@ -28,67 +28,8 @@ const testimonials = [
 
 const AboutTestimonial = () => {
   return (
-    <section className="testimonial-layout1 space">
-      <div className="container">
-        <div className="row">
-          {/* Left Column */}
-          <div className="col-lg-6">
-            <div className="title-area wow fadeInUp wow-animated" data-wow-delay="0.3s">
-              <span className="sec-subtitle">CLIENT TESTIMONIALS</span>
-              <h2 className="sec-title">What Our Customers Say About Us</h2>
-            </div>
-
-            {/* TODO: Replace with actual carousel (e.g., react-slick or Swiper) */}
-            <div
-              className="vs-carousel"
-              data-arrows="false"
-              data-center-mode="left"
-              data-dots="true"
-              data-autoplay="true"
-              data-slide-show="1"
-            >
-              {testimonials.map((testimonial, index) => (
-                <div className="testi-style1" key={index}>
-                  <div className="auther-inner">
-                    <div className="auther-img">
-                      <img src={testimonial.image} alt={`Testimonial of ${testimonial.name}`} />
-                      <div className="testi-icon">
-                        <i className="far fa-quote-left"></i>
-                      </div>
-                    </div>
-                    <div className="auther-content">
-                      <h6 className="name">{testimonial.name}</h6>
-                      <span className="designation">{testimonial.designation}</span>
-                      <div className="rating">
-                        {[...Array(5)].map((_, i) => (
-                          <i className="fas fa-star" key={i}></i>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="testi-text">{testimonial.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Image Column */}
-          <div className="col-lg-6">
-            <div className="testi-img">
-              <img src={testiMainImg} alt="Customer testimonials" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Decorative Shape */}
-      <div
-        className="shape-mockup moving z-index-n1 d-none d-xl-block"
-        style={{ right: "0%", bottom: "5%" }}
-      >
-        <img src={shapeImg} alt="Decorative shapes" />
-      </div>
-    </section>
+ <>
+ </>
   );
 };
 
