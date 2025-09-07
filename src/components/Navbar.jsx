@@ -214,7 +214,7 @@ const Navbar = () => {
                 <div className="social-style1">
                   <a href="#" style={{ color: "white" }}><i className="fab fa-facebook-f"></i></a>
                   <a href="#" style={{ color: "white" }}><i className="fab fa-linkedin-in"></i></a>
-                  <a href="#" style={{ color: "white" }}><i className="fab fa-instagram"></i></a>
+                  <a href="https://www.instagram.com/kendrakisaan/" style={{ color: "white" }}><i className="fab fa-instagram"></i></a>
                 </div>
               </div>
             </div>
