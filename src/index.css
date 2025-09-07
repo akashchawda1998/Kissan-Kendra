@@ -6509,11 +6509,7 @@ blockquote.vs-quote p {
 .faq-layout1 .faq-img {
   position: relative;
 }
-.faq-layout1 .faq-img .faq-img1 {
-  text-align: left;
-  margin-right: 60px;
-  margin-bottom: 30px;
-}
+S
 .faq-layout1 .faq-img .faq-img1 img {
   width: 100%;
 }

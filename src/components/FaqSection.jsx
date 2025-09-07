@@ -84,7 +84,6 @@ const FaqSection = () => {
               {/* First image */}
               <div
                 className="faq-img1"
-                style={{ height: "300px", overflow: "hidden" }}
               >
                 <img
                   src={faqImg1}
@@ -93,31 +92,11 @@ const FaqSection = () => {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "center",
                   }}
                 />
               </div>
 
-              {/* Second image */}
-              <div
-                className="faq-img2"
-                style={{
-                  height: "300px",
-                  overflow: "hidden",
-                  marginTop: "15px",
-                }}
-              >
-                <img
-                  src={faqImg2}
-                  alt="faq 2"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                />
-              </div>
+           
             </div>
           </div>
         </div>

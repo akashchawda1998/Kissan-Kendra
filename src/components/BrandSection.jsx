@@ -57,7 +57,7 @@ const BrandsSection = () => {
   return (
     <div className="brand-layout1 mb-40 mt-40">
       <div className="container-fluid">
-        <h2 style={{ textAlign: "center", fontSize: "3rem", marginTop: "20px" }}>
+        <h2 style={{ textAlign: "center", fontSize: "22px" }}>
           Our Brands
         </h2>
         <Slider {...settings}>
