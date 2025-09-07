@@ -18,19 +18,21 @@ const categories = [
   { title: "Motors", image: motorsImg, link: "motors" },
   { title: "Tyres", image: tyresImg, link: "tyres" },
   { title: "Axe", image: axeImg, link: "axe" },
-  { title: "Batteries", image: batteriesImg, link: "batteries" },
+  { title: "Sprinkler", image: batteriesImg, link: "batteries" },
+  { title: "Drone", image: batteriesImg, link: "batteries" },
 ];
 
 const CategoriesCarousel = () => {
   const settings = {
     dots: false,
     arrows: false,
-    infinite: true,
+    infinite: false,
     speed: 600,
     autoplay: true,
     autoplaySpeed: 2000,
-    slidesToShow: 6,
+    slidesToShow: 7,
     slidesToScroll: 1,
+    margin:20,
     responsive: [
       { breakpoint: 1200, settings: { slidesToShow: 6 } },
       { breakpoint: 992, settings: { slidesToShow: 3 } },

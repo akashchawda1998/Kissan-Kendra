@@ -183,7 +183,7 @@ const Navbar = () => {
 
 
             {/* Contact */}
-            <li><a href="/contact">Contact</a></li>
+            {/* <li><a href="/contact">Contact</a></li> */}
           </ul>
         </div>
       </div>
@@ -203,7 +203,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <i className="fas fa-phone-alt"></i>
-                      <a href="tel:+9191092626365">+91 91092626365</a>
+                      <a href="tel:+9191092626365">+91 9109-62-63-65</a>
                     </li>
                     
                   </ul>
@@ -323,6 +323,7 @@ const Navbar = () => {
 
                         {/* Blog Menu */}
                                                <li><a href="/about">About Us</a></li>
+                                               <li><a href="/blog">Blog</a></li>
 
 
                         <li><a href="/contact">Contact</a></li>

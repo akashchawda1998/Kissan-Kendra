@@ -2485,7 +2485,7 @@ a.text-theme:hover,
   color: var(--secondary-color);
 }
 .main-menu > ul > li {
-  margin: 0 16px;
+  margin: 0 12px;
 }
 .main-menu ul {
   margin: 0;
@@ -5481,8 +5481,8 @@ blockquote.vs-quote p {
   background-color: #FFF7CC;
   border-radius: 50%;
   padding: 20px;
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   line-height: 170px;
   margin: 0 auto 25px auto;
   transition: all 0.5s ease;
