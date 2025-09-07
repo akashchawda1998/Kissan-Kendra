@@ -92,7 +92,7 @@ const CounterSection = () => {
           </div>
         </div>
 
-        <div className="row g-4 justify-content-center">
+        <div className="row justify-content-center">
           {countersData.map((counter, index) => (
             <div className="col-xl-auto col-lg-4 col-md-6 text-center" key={index}>
               <div className="media-style">

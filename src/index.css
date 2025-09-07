@@ -5254,7 +5254,6 @@ blockquote.vs-quote p {
   position: relative;
 }
 .counter-layout1 .title-area {
-  margin-bottom: 100px;
 }
 .counter-layout1 .title-area .sec-title {
   color: var(--white-color);
@@ -8997,3 +8996,8 @@ table.variations .reset_variations {
 /* Utilities */
 .py-lg-6 { padding-top: 4.5rem; padding-bottom: 4.5rem; }
 .kkc .text-secondary { color: #5b6d60 !important; }
+
+
+.abc{
+      font-weight: 500!important;
+}
