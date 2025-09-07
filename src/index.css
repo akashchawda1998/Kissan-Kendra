@@ -2485,7 +2485,7 @@ a.text-theme:hover,
   color: var(--secondary-color);
 }
 .main-menu > ul > li {
-  margin: 0 9px;
+  margin: 0 14px;
 }
 .main-menu ul {
   margin: 0;

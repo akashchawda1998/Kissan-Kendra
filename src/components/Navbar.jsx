@@ -8,7 +8,7 @@ import CategoriesCarousel from "./CatagoryesCrousal";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import EnquiryPage from "./Enquiry";
 import { Link } from "react-router-dom";
-import logo from './Kisaan_Kendra_Logo__1_-removebg-preview.png'
+import logo from './logo1.jpeg'
 
 const Navbar = () => {
   const [showEnquiry, setShowEnquiry] = useState(false);
