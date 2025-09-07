@@ -100,7 +100,7 @@ export default function AboutKisaanKendraCreative() {
       <section className="container py-5 py-lg-6">
         <div className="row g-4 align-items-center">
           <div className="col-lg-6">
-            <h2 className="fw-bold mb-3">Rooted in Fields. Built for Farmers.</h2>
+            <h2 className="abc mb-3">Rooted in Fields. Built for Farmers.</h2>
             <p className="text-secondary">
               We’re more than a store—we are a growing ecosystem for India’s growers.
               From your first sowing to your biggest harvest, we deliver products and guidance
@@ -155,7 +155,7 @@ export default function AboutKisaanKendraCreative() {
       <section className="container py-5 py-lg-6">
         <div className="row">
           <div className="col-lg-5">
-            <h2 className="fw-bold mb-3">How We Help</h2>
+            <h2 className="abc mb-3">How We Help</h2>
             <p className="text-secondary">
               A simple, human workflow—from understanding your need to delivery & setup.
             </p>
@@ -195,7 +195,7 @@ export default function AboutKisaanKendraCreative() {
       <section id="contact" className="kkc-cta py-5 py-lg-6">
         <div className="container d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between gap-3">
           <div>
-            <h3 className="fw-bold mb-1">Ready to grow with Kisaan Kendra?</h3>
+            <h3 className="abc mb-1">Ready to grow with Kisaan Kendra?</h3>
             <p className="text-secondary mb-0">Call us or explore the catalogue. We’re here for you.</p>
           </div>
           <div className="d-flex gap-2">

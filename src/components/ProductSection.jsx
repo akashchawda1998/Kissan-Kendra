@@ -118,7 +118,7 @@ const ProductDetail = () => {
             {product.stock_status === "instock" ? "In Stock" : "Out of Stock"}
           </span>
 
-          <h2 className="fw-bold mb-2 mt-5">{product.name}</h2>
+          <h2 className="abc mb-2 mt-5">{product.name}</h2>
 
           <h4 className="text-success fw-semibold mb-2">
             ₹{product.price}
