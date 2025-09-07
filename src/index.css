@@ -3250,7 +3250,7 @@ blockquote.vs-quote p {
 .blog-meta a {
   display: inline-block;
   margin-right: 20px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--secondary-color);
   text-transform: uppercase;
@@ -3545,7 +3545,7 @@ blockquote.vs-quote p {
     padding: 26px 30px 30px 30px;
   }
   .blog-layout1 .blog-single .blog-title {
-    font-size: 20px;
+    font-size: 16px;
   }
   .blog-layout1 .blog-inner-author {
     padding-top: 20px;
@@ -3583,7 +3583,7 @@ blockquote.vs-quote p {
     padding: 26px 30px 30px 30px;
   }
   .blog-layout1 .blog-single .blog-title {
-    font-size: 20px;
+    font-size: 16px;
   }
   .blog-layout1 .blog-inner-author {
     padding-top: 20px;

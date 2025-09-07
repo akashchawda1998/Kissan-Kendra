@@ -14,7 +14,7 @@ import recentPost2 from "../assets/img/blog/recent-post-1-2.jpg";
 import recentPost3 from "../assets/img/blog/recent-post-1-3.jpg";
 
 // Import author image
-import authorImg from "../assets/img/blog/blog-auth-1-1.png";
+const  authorImg = "https://24caratspices.com/cdn/shop/files/Untitled-1_4.png?v=1728294180&width=300";
 
 const blogImages = [
   blogImg1,

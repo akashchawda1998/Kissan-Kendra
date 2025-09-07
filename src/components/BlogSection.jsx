@@ -7,9 +7,8 @@ import blogImg1 from "../assets/img/blog/blog-img-1-1.jpg";
 import blogImg2 from "../assets/img/blog/blog-img-1-2.jpg";
 import blogImg3 from "../assets/img/blog/blog-img-1-3.jpg";
 import blogImg4 from "../assets/img/blog/blog-img-1-4.jpg";
-import authorImg from "../assets/img/blog/blog-auth-1-1.png";
 import titleLogo from "../assets/img/icon/title-logo.png";
-
+const authorImg = "https://24caratspices.com/cdn/shop/files/Untitled-1_4.png?v=1728294180&width=300";
 const blogPosts = [
   {
     image: blogImg1,
