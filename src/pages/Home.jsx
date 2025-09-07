@@ -20,7 +20,7 @@ const Home = () => {
       <div className="container">
         <div className="row gx-5">
           {/* Left Content */}
-          <div className="col-lg-6">
+          <div className="col-lg-6 align-self-center">
             <div className="about-content">
               <div
                 className="title-area wow fadeInUp wow-animated"
@@ -33,23 +33,7 @@ const Home = () => {
                Welcome to Kisaan Kendra – Har Kisaan Ka Saathi! 👨‍🌾 We’re your one-stop shop for all farm essentials—from tractors 🚜, batteries 🔋, agricultural machinery, to durable tractor tyres—everything you need for your farm, all at competitive prices. ✅ But we’re more than just a store—we’re here to support, guide, and grow with every kisaan. Whether you're sowing your first seed or upgrading your equipment, Kisaan Kendra brings you quality products, trusted advice, and farmer-first service.
               </p>
 
-              <div className="bottom-info">
-                <div className="text-box">
-                  <h6
-                    className="nunber"
-                    style={{ fontSize: "6rem", fontFamily: "serif" }}
-                  >
-                    2+
-                  </h6>
-                  <span className="experience">
-                    years of <br />
-                    excellence
-                  </span>
-                </div>
-                <div className="author-signature">
-                  <img src={signatureImg} alt="about-signature" />
-                </div>
-              </div>
+         
             </div>
           </div>
 
