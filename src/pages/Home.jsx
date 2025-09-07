@@ -30,14 +30,7 @@ const Home = () => {
               </div>
 
               <p className="about-text">
-                We offer a wide range of agricultural products including
-                tractors, batteries, tires, motors, and more. Our products are
-                trusted by thousands of farmers for their reliability,
-                durability, and performance in the field. Whether you’re
-                looking to upgrade your machinery or maintain your equipment,
-                Kisaan Kendra has you covered. Experience quality and
-                productivity with every purchase. Your one-stop destination for
-                all agricultural needs—helping farmers grow better every day.
+               Welcome to Kisaan Kendra – Har Kisaan Ka Saathi! 👨‍🌾 We’re your one-stop shop for all farm essentials—from tractors 🚜, batteries 🔋, agricultural machinery, to durable tractor tyres—everything you need for your farm, all at competitive prices. ✅ But we’re more than just a store—we’re here to support, guide, and grow with every kisaan. Whether you're sowing your first seed or upgrading your equipment, Kisaan Kendra brings you quality products, trusted advice, and farmer-first service.
               </p>
 
               <div className="bottom-info">
