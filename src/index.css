@@ -2723,7 +2723,7 @@ a.text-theme:hover,
   color: var(--secondary-color);
 }
 .header-layout1 .header-top .header-links a:hover {
-  color: var(--secondary-color);
+  color:#fff;
 }
 .header-layout1 .social-style1 a:hover,
 .header-layout1 .header-links a:hover {
