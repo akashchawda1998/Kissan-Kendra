@@ -1,205 +1,179 @@
-import React from "react";
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-// Import icon images
+// Optional: use your icons (or keep built-in SVGs below)
 import iconPhone from "../assets/img/icon/icon-1-1.png";
 import iconEmail from "../assets/img/icon/icon-1-2.png";
-// If you want to use location icon, import it as well:
-// import iconLocation from "src/assets/img/icon/icon-1-3.png";
 
-const ContactSection = () => {
+export default function ContactAttractive() {
+  const [form, setForm] = useState({
+    name: "", phone: "", email: "", subject: "", message: "", consent: false,
+  });
+  const [status, setStatus] = useState(null);
+
+  const onChange = (e) => {
+    const { name, type, value, checked } = e.target;
+    setForm((s) => ({ ...s, [name]: type === "checkbox" ? checked : value }));
+  };
+
+  const validate = () => {
+    if (!form.name) return "Please enter your name.";
+    if (!/^[0-9+\-\s()]{7,15}$/.test(form.phone)) return "Please enter a valid phone.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) return "Please enter a valid email.";
+    if (!form.subject) return "Please enter a subject.";
+    if (!form.message) return "Please add a message.";
+    if (!form.consent) return "Please accept the consent.";
+    return "";
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const err = validate();
+    if (err) return setStatus({ ok: false, msg: err });
+    try {
+      // hook up your API here
+      // await fetch("/api/contact", { method: "POST", body: JSON.stringify(form) });
+      setStatus({ ok: true, msg: "Thanks! We’ll get back to you shortly." });
+      setForm({ name: "", phone: "", email: "", subject: "", message: "", consent: false });
+    } catch {
+      setStatus({ ok: false, msg: "Something went wrong. Please try again." });
+    }
+  };
+
   return (
-    <section className="contact-layout1 space">
-      <div className="container">
-        <div className="row">
-          {/* Left Column - Form */}
-          <div className="col-xl-8 col-lg-7">
-            <div
-              className="title-area wow fadeInUp wow-animated"
-              data-wow-delay="0.3s"
-            >
-              <span className="sec-subtitle">CONTACT US</span>
-              <h2 className="sec-title">
-                We're Here to Help You. Get in Touch with Our Team!
-              </h2>
+    <main className="kx-contact">
+      {/* Hero */}
+      <header className="kx-hero position-relative overflow-hidden">
+        <br></br>
+        <br></br>
+        <div className="container py-5 py-lg-6">
+          <div className="row align-items-center">
+            <div className="col-lg-8">
+              <span className="badge bg-white text-dark rounded-pill fw-semibold kx-chip">CONTACT US</span>
+              <h1 className="display-5 abc text-white mt-3">Let’s talk about your needs</h1>
+              <p className="lead text-white-50 mb-0">
+                Need help choosing tyres, oils, or farm tools? We’ll reply fast—usually within a few hours.
+              </p>
             </div>
-            <div className="vs-comment-form">
-              <div id="respond" className="comment-respond">
-                <div className="form-title">
-                  <p className="form-text">
-                    Please fill out the form below and one of our recruitment
-                    specialists will back in touch shortly.
-                  </p>
+          </div>
+        </div>
+        <div className="kx-wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,48 C240,120 480,0 720,48 C960,96 1200,72 1440,24 L1440,120 L0,120 Z"/></svg>
+        </div>
+      </header>
+
+      {/* Content */}
+      <section className="container py-5 py-lg-6">
+        <div className="row g-4">
+          {/* Form */}
+          <div className="col-xl-8 col-lg-7">
+            <div className="card border-0 shadow-sm kx-glass">
+              <div className="card-body p-4 p-lg-5">
+                <div className="d-flex align-items-center gap-2 mb-2">
+                  <span className="kx-dot" /> <span className="text-uppercase text-muted small fw-semibold">Write to us</span>
                 </div>
-                <form
-                  action="https://html.vecurosoft.com/farmix/demo/mail.php"
-                  method="post"
-                  className="form-style3 ajax-contact"
-                >
-                  <div className="row">
-                    
-                    <div className="col-md-6 form-group">
-                      <input
-                        name="fname"
-                        type="text"
-                        className="form-control"
-                        placeholder="Name"
-                        required
-                      />
-                    </div>
+                <h2 className="abc mb-1">Get in touch with our team</h2>
+                <p className="text-secondary mb-4">
+                  Prefer phone? Call <a className="kx-link" href="tel:+919109626365">+91 9109-62-63-65</a>
+                </p>
 
+                {status && (
+                  <div className={`alert ${status.ok ? "alert-success" : "alert-danger"}`} role="alert">
+                    {status.msg}
+                  </div>
+                )}
 
-                    <div className="col-md-6 form-group">
-                      <input
-                        name="fname"
-                        type="number"
-                        className="form-control"
-                        placeholder="Number"
-                        required
-                      />
-                    </div>
-
-
-                    <div className="col-6 form-group">
-                      <input
-                        name="email"
-                        type="email"
-                        className="form-control"
-                        placeholder="Email Address"
-                        required
-                      />
-                    </div>
-
-
-                     <div className="col-6 form-group">
-                      <input
-                        name="ubject"
-                        type="text"
-                        className="form-control"
-                        placeholder="Subject"
-                        required
-                      />
-                    </div>
-
-
-                    <div className="col-12">
-                      <div className="custom-checkbox notice">
-                        <input
-                          id="wp-comment-cookies-consent"
-                          name="wp-comment-cookies-consent"
-                          type="checkbox"
-                          value="yes"
-                        />
-                        <label htmlFor="wp-comment-cookies-consent">
-                          Save my name, email, and website in this browser for
-                          the next time I comment.
-                        </label>
+                <form onSubmit={onSubmit} noValidate>
+                  <div className="row g-3">
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <input className="form-control" id="name" name="name" placeholder="Name" value={form.name} onChange={onChange} />
+                        <label htmlFor="name">Name</label>
                       </div>
                     </div>
-                    <div className="col-12 form-group">
-                      <textarea
-                        name="message"
-                        className="form-control"
-                        placeholder="Message"
-                        required
-                      ></textarea>
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <input className="form-control" id="phone" name="phone" type="tel" placeholder="Phone" value={form.phone} onChange={onChange} />
+                        <label htmlFor="phone">Phone</label>
+                      </div>
                     </div>
-                    <div className="col-12 form-group">
-                      <button className="vs-btn" type="submit">
-                        Send Message
-                      </button>
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <input className="form-control" id="email" name="email" type="email" placeholder="Email" value={form.email} onChange={onChange} />
+                        <label htmlFor="email">Email</label>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <input className="form-control" id="subject" name="subject" placeholder="Subject" value={form.subject} onChange={onChange} />
+                        <label htmlFor="subject">Subject</label>
+                      </div>
+                    </div>
+                    <div className="col-12">
+                      <div className="form-floating">
+                        <textarea className="form-control" id="message" name="message" placeholder="Message" style={{ height: 70 }} value={form.message} onChange={onChange} />
+                        <label htmlFor="message">Message</label>
+                      </div>
+                    </div>
+                    
+                    <div className="col-12">
+                      <button className="btn btn-dark btn-lg w-100" type="submit">Send Message</button>
                     </div>
                   </div>
                 </form>
-                <p className="form-messages mb-0 mt-3"></p>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Contact Info */}
+          {/* Info */}
           <div className="col-xl-4 col-lg-5">
-            <div className="contact-left">
-              {/* Uncomment and import images if you want to show author info */}
-              {/* <div className="auther-inner">
-                <div className="auther-img">
-                  <img
-                    src="src/assets/img/about/about-author.png"
-                    alt="about"
-                  />
-                </div>
-                <div className="auther-content">
-                  <h6 className="name">Thomas Walkar</h6>
-                  <span className="designation">founder - CEO</span>
-                  <img
-                    src="src/assets/img/about/contact-signature.png"
-                    alt="contact"
-                  />
-                </div>
-              </div> */}
-
-              <div className="team-media">
-                <h2 className="contact-title">Contact Us</h2>
-
-                <div className="media-style1">
-                  <div className="media-icon">
-                    <img src={iconPhone} alt="icon" />
+            <div className="d-flex flex-column gap-3">
+              <div className="card border-0 shadow-sm kx-card">
+                <div className="card-body p-4">
+                  <h3 className="h5 abc mb-3">Contact Details</h3>
+                  <div className="d-flex align-items-start gap-3 mb-3">
+                    <span className="kx-icon">{iconPhone ? <img src={iconPhone} alt="phone" /> : "📞"}</span>
+                    <div>
+                      <div className="fw-semibold">Phone</div>
+                      <a className="kx-link" href="tel:+919109626365">+91 9109-62-63-65</a>
+                      <div className="mt-2"><a className="btn btn-outline-dark btn-sm" href="https://wa.me/919109626365" target="_blank" rel="noreferrer">WhatsApp us</a></div>
+                    </div>
                   </div>
-                  <div className="media-body">
-                    <h3 className="media-title">Phone No:</h3>
-                    
+                  <div className="d-flex align-items-start gap-3">
+                    <span className="kx-icon">{iconEmail ? <img src={iconEmail} alt="email" /> : "✉️"}</span>
+                    <div>
+                      <div className="fw-semibold">Email</div>
+                      <a className="kx-link" href="mailto:info@kisaankendra.in">info@kisaankendra.in</a>
+                    </div>
                   </div>
                 </div>
-
-                <div className="media-style1">
-                  <div className="media-icon">
-                    <img src={iconEmail} alt="icon" />
-                  </div>
-                  <div className="media-body">
-                    <h3 className="media-title">Email Address:</h3>
-                    <p className="media-info">
-                      <a href="mailto:example@domain.com">
-                        info@kisaankendra.in
-                      </a>
-                      <br />
-                      <a href="mailto:officename@example.com">
-                        info@kisaankendra.in
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Uncomment if you want to show location info */}
-                {/* <div className="media-style1">
-                  <div className="media-icon">
-                    <img src={iconLocation} alt="icon" />
-                  </div>
-                  <div className="media-body">
-                    <h3 className="media-title">Location:</h3>
-                    <p className="media-info">
-                      5919 Trussville Crossings Pkwy, Birmingham, United Kingdom
-                    </p>
-                  </div>
-                </div> */}
               </div>
+
+           
             </div>
           </div>
         </div>
 
-        {/* Google Map */}
-        <div className="map mt-4">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235527.49482607495!2d75.69903738855072!3d22.72388828988633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1751607583739!5m2!1sen!2sin"
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Google Map"
-          ></iframe>
+        {/* Map with overlay */}
+        <div className="position-relative mt-4 mt-lg-5">
+          <div className="kx-map ratio ratio-21x9 rounded-4 overflow-hidden">
+            <iframe
+              title="Location"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235527.49482607495!2d75.69903738855072!3d22.72388828988633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+            />
+          </div>
+          <div className="kx-map-card shadow-sm">
+            <div className="abc">Indore, Madhya Pradesh</div>
+            <div className="text-secondary small mb-2">Serving across India</div>
+            <a className="btn btn-dark btn-sm w-100" href="https://maps.google.com/?q=Indore" target="_blank" rel="noreferrer">
+              Open in Google Maps
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
-};
-
-export default ContactSection;
+}

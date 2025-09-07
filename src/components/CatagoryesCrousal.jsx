@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Image Imports
 import tractorImg from "../assets/img/catagory-Logo/tractor.png";
 import batteriesImg from "../assets/img/catagory-Logo/batteries.png";
 import motorsImg from "../assets/img/catagory-Logo/engine.png";
@@ -11,7 +10,6 @@ import tyresImg from "../assets/img/catagory-Logo/tyre.png";
 import axeImg from "../assets/img/catagory-Logo/axe.png";
 import titleLogo from "../assets/img/icon/title-logo.png";
 
-// Categories
 const categories = [
   { title: "Tractors", image: tractorImg, link: "tractor" },
   { title: "Batteries", image: batteriesImg, link: "batteries" },
