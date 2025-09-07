@@ -8,6 +8,7 @@ import CategoriesCarousel from "./CatagoryesCrousal";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import EnquiryPage from "./Enquiry";
 import { Link } from "react-router-dom";
+import logo from './Kisaan_Kendra_Logo__1_-removebg-preview.png'
 
 const Navbar = () => {
   const [showEnquiry, setShowEnquiry] = useState(false);
@@ -229,7 +230,7 @@ const Navbar = () => {
                   <div className="col-auto">
                     <div className="header-logo">
                       <a href="/">
-                        <img src="https://kisaankendra.in/wp-content/uploads/2021/08/1-removebg-preview-1.png" alt="logo" />
+                        <img src={logo} alt="logo" />
                       </a>
                     </div>
                   </div>
