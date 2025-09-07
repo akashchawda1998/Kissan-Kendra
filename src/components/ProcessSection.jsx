@@ -42,6 +42,8 @@ export default function AboutKisaanKendraCreative() {
     <main className="kkc">
       {/* HERO */}
       <section className="kkc-hero position-relative overflow-hidden">
+        <br></br>
+        <br></br>
         <div className="container py-5 py-lg-6 position-relative">
           <div className="row align-items-center g-4">
             <div className="col-lg-6">
