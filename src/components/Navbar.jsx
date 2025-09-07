@@ -339,12 +339,7 @@ const Navbar = () => {
                     </button>
                   </div>
 
-                  {/* Enquiry button */}
-                  <div className="col-auto d-xl-block d-none">
-                    <div className="header-icons">
-                      <b href="#" onClick={handleToggleEnquiry} className="link-btn">Enquiry</b>
-                    </div>
-                  </div>
+                 
                 </div>
               </div>
             </div>

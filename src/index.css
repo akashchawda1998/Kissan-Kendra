@@ -2442,7 +2442,7 @@ a.text-theme:hover,
 }
 
 .header-logo {
-  max-width: 130px;
+  max-width: 140px;
   padding: 15px 0;
 }
 .will-sticky .sticky-active {
@@ -2485,7 +2485,7 @@ a.text-theme:hover,
   color: var(--secondary-color);
 }
 .main-menu > ul > li {
-  margin: 0 12px;
+  margin: 0 9px;
 }
 .main-menu ul {
   margin: 0;
