@@ -24,7 +24,11 @@ const Footer = () => {
                 </div>
                 <div className="media-body">
                   <h3 className="media-title">Call Us:</h3>
-                 
+                  <p className="media-info">
+                    <a href="+91 9109-62-63-65">+91 9109-62-63-65</a>
+                    <br />
+                    <a href="#"></a>
+                  </p>
                 </div>
               </div>
             </div>
