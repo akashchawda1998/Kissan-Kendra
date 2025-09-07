@@ -4309,12 +4309,13 @@ blockquote.vs-quote p {
 }
 
 .title-area .sec-title {
-  font-size: 55px;
+  font-size: 32px;
 }
 .title-area .sec-subtitle {
   color: var(--secondary-color);
   text-transform: uppercase;
   font-family: var(--title-font);
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -6189,7 +6190,7 @@ blockquote.vs-quote p {
 /*------------------- 4.19. Product  -------------------*/
 .provide-style1 {
   background-color: rgb(9 48 39 / 83%);
-  padding: 60px 70px;
+  padding: 40px;
 }
 .provide-style1 .title-area .sec-subtitle {
   color: var(--white-color);
@@ -6244,6 +6245,7 @@ blockquote.vs-quote p {
 .provide-style1 .provide-item .provide-content .text {
   color: #DBDBDB;
   margin-bottom: 0;
+  font-size: 14px;
 }
 
 .provide-inner {
