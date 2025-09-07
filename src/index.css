@@ -6560,9 +6560,9 @@ blockquote.vs-quote p {
 .accordion-style1 .accordion-button {
   background-color: transparent;
   border: none;
-  padding: 22px 30px 22px 65px;
-  font-size: 20px;
-  font-weight: 600;
+  padding: 10px 30px 10px 55px;
+  font-size: 16px;
+  font-weight: 300;
   font-family: var(--title-font);
   color: var(--black-color);
   text-align: left;
@@ -6573,14 +6573,14 @@ blockquote.vs-quote p {
   font-family: "Font Awesome 5 Free"; /* or your variable if defined correctly */
   font-weight: 900; /* Required for solid icons */
   color: #4E4E4E;
-  font-size: 16px;
+  font-size: 14px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   position: absolute;
-  left: 30px;
+  left:20px;
   border: none;
   background-image: none;
 }
@@ -6599,8 +6599,9 @@ blockquote.vs-quote p {
 }
 .accordion-style1 .accordion-body {
   border-top: 1px solid var(--border-color);
-  padding: 20px 60px 20px 35px;
-  font-size: 16px;
+  padding: 20px;
+  font-size: 15px;
+  font-family: 'DM Sans';
 }
 .accordion-style1 .accordion-body p:last-child {
   margin-bottom: 0;
