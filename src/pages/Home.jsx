@@ -44,7 +44,7 @@ const Home = () => {
                 src={aboutMainImg}
                 alt="Tractor"
                 style={{
-                  height: "450px",
+                  height: "350px",
                   objectFit: "cover",
                   borderRadius: "10px",
                 }}
