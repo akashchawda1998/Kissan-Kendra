@@ -26,8 +26,6 @@ const Footer = () => {
                   <h3 className="media-title">Call Us:</h3>
                   <p className="media-info">
                     <a href="+91 9109-62-63-65">+91 9109-62-63-65</a>
-                    <br />
-                    <a href="#"></a>
                   </p>
                 </div>
               </div>
@@ -42,8 +40,7 @@ const Footer = () => {
                 <div className="media-body">
                   <h3 className="media-title">Email Us:</h3>
                   <p className="media-info">
-                    <a href="mailto:support@kisaankendra.in">support@kisaankendra.in</a>
-                    <br />
+                    
                     <a href="mailto:info@kisaankendra.in">info@kisaankendra.in</a>
                   </p>
                 </div>
