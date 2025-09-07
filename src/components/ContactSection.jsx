@@ -50,6 +50,7 @@ export default function ContactAttractive() {
           <div className="row align-items-center">
             <div className="col-lg-8">
               <span className="badge bg-white text-dark rounded-pill fw-semibold kx-chip">CONTACT US</span>
+              <br></br>
               <h1 className="display-5 abc text-white mt-3">Let’s talk about your needs</h1>
               <p className="lead text-white-50 mb-0">
                 Need help choosing tyres, oils, or farm tools? We’ll reply fast—usually within a few hours.
