@@ -8940,7 +8940,7 @@ table.variations .reset_variations {
 .kkc-grid {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(6, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0,1fr));
 }
 @media (max-width: 1199px){ .kkc-grid { grid-template-columns: repeat(3,1fr); } }
 @media (max-width: 575px){ .kkc-grid { grid-template-columns: repeat(1,1fr); } }
@@ -9000,4 +9000,10 @@ table.variations .reset_variations {
 
 .abc{
       font-weight: 500!important;
+}
+
+
+.btn-lg{
+  font-family: "DM Sans"!important;
+;
 }

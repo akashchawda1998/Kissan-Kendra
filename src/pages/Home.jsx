@@ -9,7 +9,7 @@ import TestimonialSection from '../components/TestimonialSection'
 import BlogSection from '../components/BlogSection'
 import BrandsSection from '../components/BrandSection'
 import signatureImg from "../assets/img/about/about-signature.png";
-import aboutMainImg from "../assets/img/about/about-1-2(2).png";
+import aboutMainImg from "./aboutimg.png"
 
 const Home = () => {
   return (
