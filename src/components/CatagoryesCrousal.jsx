@@ -17,7 +17,7 @@ const categories = [
   { title: "Batteries", image: batteriesImg, link: "batteries" },
   { title: "Motors", image: motorsImg, link: "motors" },
   { title: "Tyres", image: tyresImg, link: "tyres" },
-  { title: "Axe", image: axeImg, link: "axe" },
+  { title: "Rotavator", image: axeImg, link: "axe" },
   { title: "Sprinkler", image: batteriesImg, link: "batteries" },
   { title: "Drone", image: batteriesImg, link: "batteries" },
 ];

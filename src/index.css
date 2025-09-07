@@ -5700,7 +5700,6 @@ blockquote.vs-quote p {
 }
 
 .fixed-card {
-  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -5724,7 +5723,7 @@ blockquote.vs-quote p {
 }
 
 .fixed-card .product-img img {
-  max-height: 100%;
+  max-height: 300px;
   max-width: 100%;
   object-fit: contain;
 }

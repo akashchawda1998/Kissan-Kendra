@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const ProductList = () => {
   const [searchParams] = useSearchParams();
-  const categoryId = searchParams.get("category");
+  const categoryId = searchParams.get("category") || "Tractors";
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,13 +13,18 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
-      const url = `https://kisaankendra.in/wp-json/wc/v3/products?category=${categoryId}&per_page=100&consumer_key=ck_e9a784047c98ebb02ce6b751f9418beaa3039c45&consumer_secret=cs_03c1a1491551deda4e6729a306b036192c99b3db`;
+      const url = `https://api.kisaankendra.in/api/products/filter?category=Tractors`;
 
       try {
         const response = await axios.get(url);
-        setProducts(response.data);
+        if (response.data && response.data.products) {
+          setProducts(response.data.products);
+        } else {
+          setProducts([]);
+        }
       } catch (error) {
         console.error("Error fetching products:", error);
+        setProducts([]);
       }
       setIsLoading(false);
     };
@@ -61,7 +66,6 @@ const ProductList = () => {
             marginBottom: "12px",
           }}
         ></div>
-
         <div style={{ padding: "0 8px" }}>
           <div
             style={{
@@ -98,15 +102,9 @@ const ProductList = () => {
     <section className="products space">
       <style>{`
         @keyframes pulse {
-          0% {
-            background-color: #f0f0f0;
-          }
-          50% {
-            background-color: #e0e0e0;
-          }
-          100% {
-            background-color: #f0f0f0;
-          }
+          0% { background-color: #f0f0f0; }
+          50% { background-color: #e0e0e0; }
+          100% { background-color: #f0f0f0; }
         }
       `}</style>
 
@@ -123,10 +121,9 @@ const ProductList = () => {
           </div>
         </div>
 
-        {/* Product Grid */}
         <div className="row">
           {isLoading
-            ? Array.from({ length: 8 }).map((_, index) => renderSkeletonCard(_, index))
+            ? Array.from({ length: 8 }).map(renderSkeletonCard)
             : currentProducts.length === 0 ? (
               <div style={{ textAlign: "center", padding: "40px 20px", color: "#555" }}>
                 <img
@@ -141,17 +138,22 @@ const ProductList = () => {
               </div>
             ) : (
               currentProducts.map((product) => (
-                <div key={product.id} className="col-xl-3 col-lg-4 col-md-6">
-                  <Link to={`/product-details/${product.id}`}>
+                <div key={product._id} className="col-xl-3 col-lg-3 col-md-6">
+                  <Link to={`/product-details/${product._id}`}>
                     <div className="product-style1 fixed-card">
                       <div className="product-img">
-                        <img src={product.images[0]?.src} alt={product.name} />
+                        <img
+                          src={`https://api.kisaankendra.in${product.imageUrl}`}
+                          alt={product.title}
+                        />
                       </div>
                       <div className="product-about">
-                        <p className="text">{product.categories[0]?.name}</p>
+                        <p className="text">{product.subcategory}</p>
                         <h2 className="product-title">
-                          <Link to={`/product-details/${product.id}`}>
-                            {product.name.split(" ").slice(0, 8).join(" ")}{product.name.split(" ").length > 10 ? "..." : ""}
+                          <Link to={`/product-details/${product._id}`}>
+                            {product.title.length > 50
+                              ? product.title.slice(0, 50) + "..."
+                              : product.title}
                           </Link>
                         </h2>
                         <div className="rating">
@@ -159,17 +161,11 @@ const ProductList = () => {
                             <i key={i} className="fas fa-star"></i>
                           ))}
                         </div>
-                        <div className="social-style" style={{ width: "100%" }}>
-                        <ul>
-                          <li>
-                            <a className="main-icon" href="tel:+9191092626365">
-                              <i className="fas fa-phone"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      </div>
+                        <div className="price">
+                          ₹{Number(product.price).toLocaleString("en-IN")}
+                        </div>
                       
+                      </div>
                     </div>
                   </Link>
                 </div>
@@ -186,7 +182,6 @@ const ProductList = () => {
                   <i className="fal fa-long-arrow-left"></i>
                 </button>
               </li>
-
               {[...Array(totalPages)].map((_, index) => (
                 <li key={index}>
                   <button
@@ -197,7 +192,6 @@ const ProductList = () => {
                   </button>
                 </li>
               ))}
-
               <li className={`arrow ${currentPage === totalPages ? 'disabled' : ''}`}>
                 <button onClick={() => handlePageClick(currentPage + 1)}>
                   <i className="fal fa-long-arrow-right"></i>
