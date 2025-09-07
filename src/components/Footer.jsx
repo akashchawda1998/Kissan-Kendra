@@ -8,10 +8,19 @@ import footerBg from "../assets/img/bg/footer-bg-1-1.jpg";
 
 const Footer = () => {
   return (
+<>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</link>
+    <a href="https://api.whatsapp.com/send?phone=+919109626365&text=Hello Kisaan Kendra" class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
     <footer
       className="footer-wrapper footer-layout1"
       style={{ backgroundImage: `url(${footerBg})` }}
     >
+
+
+
       {/* Top Contact Section */}
       <div className="footer-top">
         <div className="container">
@@ -166,6 +175,8 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+</>
+
   );
 };
 
