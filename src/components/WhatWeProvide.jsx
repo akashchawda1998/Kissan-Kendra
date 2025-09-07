@@ -11,24 +11,20 @@ import provideBg from "../assets/img/bg/provide-bg-1.png";
 
 const WhatWeProvide = () => {
   const services = [
-    {
-      icon: <FaTractor size={40} color="#4CAF50" />,
-      title: "High-Quality Tractor Tyres",
-      description:
-        "Robust tyres designed for heavy-duty farming, ensuring better grip, fuel efficiency, and longer life on all terrains.",
-    },
-    {
+     {
       icon: <FaTools size={40} color="#2196F3" />,
       title: "Durable Agricultural Tractors",
       description:
         "We offer efficient, long-lasting tractors built to perform even in the toughest field conditions for daily farm use.",
     },
-    {
-      icon: <FaPhoneAlt size={40} color="#FF9800" />,
-      title: "Expert Customer Support",
+     {
+      icon: <FaTractor size={40} color="#4CAF50" />,
+      title: "High-Quality Tractor Tyres",
       description:
-        "Our experienced team assists with product guidance, maintenance tips, and after-sales service to keep you productive.",
+        "Robust tyres designed for heavy-duty farming, ensuring better grip, fuel efficiency, and longer life on all terrains.",
     },
+  
+    
     {
       icon: <FaOilCan size={40} color="#E91E63" />,
       title: "Premium Engine Oils",
@@ -43,9 +39,15 @@ const WhatWeProvide = () => {
     },
     {
       icon: <FaWrench size={40} color="#795548" />,
-      title: "Affordable Spare Parts",
+      title: "Affordable Tractors Parts",
       description:
         "We provide genuine and budget-friendly spare parts for tractors and equipment, ensuring quick repairs and uptime.",
+    },
+    {
+      icon: <FaPhoneAlt size={40} color="#FF9800" />,
+      title: "Expert Customer Support",
+      description:
+        "Our experienced team assists with product guidance, maintenance tips, and after-sales service to keep you productive.",
     },
   ];
 
