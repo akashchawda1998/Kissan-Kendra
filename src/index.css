@@ -8381,6 +8381,9 @@ table.variations .reset_variations {
 .social-style1 a:last-child {
   margin-right: 0;
 }
+.social-style1 {
+  float: right;
+}
 .social-style1 a:hover {
   color: var(--theme-color);
 }
