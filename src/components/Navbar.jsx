@@ -315,7 +315,7 @@ const Navbar = () => {
 
 
                                 <li><a href="/productlist?category=Mahindra & Mahindra">Brush Cutters</a></li>
-                                <li><a href="/productlist?category=Eicher">Chainsaws</a></li>
+                                <li><a href="/productlist?category=Agriculture&subcategory=Chainsaws">Chainsaws</a></li>
                                 <li><a href="/productlist?category=192">Chaff Cutters</a></li>
                                 <li><a href="/tractor/swaraj">Earth Auger</a></li>
                                 <li><a href="/tractor/farmtrac">Harvesters</a></li>
@@ -328,7 +328,7 @@ const Navbar = () => {
 
 
 
-                            <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
+                            <li><a href="/productlist?category=Agriculture&subcategory=Agriculture%20Pipes">Agriculture Pipes</a></li>
                             <li><a href="/productlist?category=Agriculture&subcategory=Agriculture%20Pumps">Agriculture Pumps</a></li>
                           </ul>
                         </li>
@@ -357,7 +357,7 @@ const Navbar = () => {
                           <a href="/batteries">Batteries</a>
                           <ul className="sub-menu">
                             <li><a href="/productlist?category=156">Exide</a></li> {/* Page not made yet */}
-                            <li><a href="/productlist?category=158">Amaron</a></li>
+                            <li><a href="/productlist?category=Batteries&subcategory=Amaron">Amaron</a></li>
                           </ul>
                         </li>
 
