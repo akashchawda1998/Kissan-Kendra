@@ -329,7 +329,7 @@ const Navbar = () => {
 
 
                             <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
-                            <li><a href="/productlist?category=155">Agriculture Pumps</a></li>
+                            <li><a href="/productlist?category=Agriculture&subcategory=Agriculture%20Pumps">Agriculture Pumps</a></li>
                           </ul>
                         </li>
 
