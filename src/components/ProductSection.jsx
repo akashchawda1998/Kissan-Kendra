@@ -1,210 +1,251 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-// Modern single-file Product Detail component (TailwindCSS)
-// - Expects API returning the JSON you pasted (message/status/code/data)
-// - Uses Authorization Bearer token (hardcoded per your request)
-// - Dynamic: images, specs, download file, created/updated dates, etc.
+/**
+ * ProductDetail.jsx
+ * - Uses API response shape: res.data.data (your sample JSON)
+ * - Replace the hardcoded token with your auth flow in production
+ * - Route should provide :id if you want to load different products
+ */
 
-export default function ProductDetailModern() {
+export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [showAllSpecs, setShowAllSpecs] = useState(false);
   const [error, setError] = useState(null);
+  const mainRef = useRef(null);
 
   useEffect(() => {
     let cancelled = false;
-    const fetchProduct = async () => {
+    async function fetchProduct() {
       setLoading(true);
       setError(null);
       try {
-        // Use id from route if provided, otherwise keep as empty and API may return default
-        const productId = id || "68d7bc010becd3a651878b49";
-        const url = `https://admin.kisaankendra.in//api/product/get-product/${productId}`; // change if your endpoint differs
-
+        const productId = id || "68d7c84a52d360024f141744"; // default fallback
+        const url = `https://admin.kisaankendra.in/api/product/get-product/${productId}`;
         const token =
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQyZTc2YTU0NmI1MDdjMTFmYjYyOTMiLCJpYXQiOjE3NTk0Njc2MTYsImV4cCI6MTc2MDc2MzYxNn0.srEUbGPhbdYnlr_eGK1c2ApfzXh7j0BmHyqaA95i3Iw";
 
         const res = await axios.get(url, { headers: { Authorization: token } });
-        const d = res?.data?.data ?? res?.data ?? null; // adapt to wrapper
+        const d = res?.data?.data ?? res?.data ?? null;
         if (!cancelled) {
           setProduct(d);
           setSelectedImage(0);
         }
       } catch (err) {
         console.error(err);
-        if (!cancelled) setError("Failed to load product");
+        if (!cancelled) setError("Failed to fetch product.");
       } finally {
         if (!cancelled) setLoading(false);
       }
-    };
-
+    }
     fetchProduct();
-    return () => {
-      cancelled = true;
-    };
+    return () => (cancelled = true);
   }, [id]);
 
   if (loading) {
     return (
-      <div className="max-w-6xl mx-auto p-6">
-        <div className="animate-pulse grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <div className="h-96 bg-gray-200 rounded-lg" />
-            <div className="flex gap-3">
-              <div className="w-20 h-20 bg-gray-200 rounded" />
-              <div className="w-20 h-20 bg-gray-200 rounded" />
-              <div className="w-20 h-20 bg-gray-200 rounded" />
-            </div>
-          </div>
-          <div className="space-y-4">
-            <div className="h-8 w-1/3 bg-gray-200 rounded" />
-            <div className="h-6 w-2/3 bg-gray-200 rounded" />
-            <div className="h-6 w-1/4 bg-gray-200 rounded" />
-            <div className="h-10 w-44 bg-gray-200 rounded" />
-            <div className="h-40 bg-gray-200 rounded" />
-          </div>
-        </div>
+      <div className="pd-container pd-loading">
+        <div className="pd-skeleton-left" />
+        <div className="pd-skeleton-right" />
       </div>
     );
   }
 
   if (error || !product) {
     return (
-      <div className="max-w-4xl mx-auto p-6">
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-          <p className="text-yellow-800">{error || "Product not found"}</p>
-        </div>
+      <div className="pd-container pd-error">
+        <div className="pd-alert">{error || "Product not found"}</div>
       </div>
     );
   }
 
-  // Map fields from your response shape
-  const idVal = product._id || product.id || "";
-  const title = product.title || product.name || "Untitled Product";
-  const description = product.description || "";
-  const price = product.price ?? product.salePrice ?? 0;
-  const category = product.category || "";
-  const subcategory = product.subcategory || "";
-  const images = Array.isArray(product.imageUrl) ? product.imageUrl : product.imageUrl ? [product.imageUrl] : [];
-  const specs = Array.isArray(product.specification) ? product.specification : [];
-  const file = product.file || null;
-  const createdAt = product.createdAt ? new Date(product.createdAt) : null;
-  const updatedAt = product.updatedAt ? new Date(product.updatedAt) : null;
+  // destructure product (matches your JSON)
+  const {
+    title,
+    description,
+    price,
+    imageUrl = [],
+    specification = [],
+    file,
+    category,
+    subcategory,
+    _id,
+    updatedAt,
+  } = product;
+
+  const images = Array.isArray(imageUrl) ? imageUrl : imageUrl ? [imageUrl] : [];
+  const specs = Array.isArray(specification) ? specification : [];
+
+  const mid = Math.ceil(specs.length / 2);
+  const leftSpecs = specs.slice(0, mid);
+  const rightSpecs = specs.slice(mid);
+
+  const copyLink = () => {
+    navigator.clipboard?.writeText(window.location.href);
+    // micro-feedback (you can replace with toast)
+    alert("Link copied");
+  };
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Left: gallery */}
-        <div>
-          <div className="bg-white rounded-xl shadow overflow-hidden">
-            <div className="h-96 flex items-center justify-center bg-gray-50">
-              <img
-                src={images[selectedImage] || "https://via.placeholder.com/800x600?text=No+Image"}
-                alt={title}
-                className="max-h-[360px] object-contain"
-              />
-            </div>
-            <div className="p-4 flex gap-3 overflow-x-auto">
-              {images.length ? (
-                images.map((src, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setSelectedImage(i)}
-                    className={`flex-none rounded-lg overflow-hidden border transition-shadow duration-150 ${
-                      selectedImage === i ? "ring-2 ring-green-400" : "hover:shadow"
-                    }`}
-                  >
-                    <img src={src} alt={`${title}-thumb-${i}`} className="w-20 h-20 object-cover" />
-                  </button>
-                ))
-              ) : (
-                <div className="text-gray-400">No images available</div>
-              )}
-            </div>
-          </div>
-
-          {/* File / Download */}
-          {file && (
-            <div className="mt-4 flex items-center gap-3">
-              <a
-                href={file}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white border rounded shadow-sm hover:shadow-md"
-              >
-                📄 Download Spec
-              </a>
-              <span className="text-sm text-gray-500">Updated: {updatedAt ? updatedAt.toLocaleString() : "-"}</span>
-            </div>
-          )}
+    <div className="pd-container">
+      {/* Breadcrumb + small actions */}
+      <div className="pd-breadcrumb">
+        <div className="pd-bc-left">
+          <span className="bc-item">Home</span>
+          <span className="bc-sep">/</span>
+          <span className="bc-item">{category || "Category"}</span>
+          <span className="bc-sep">/</span>
+          <span className="bc-current">{title}</span>
         </div>
-
-        {/* Right: details */}
-        <div>
-          <div className="flex items-start justify-between">
-            <div>
-              <h1 className="text-2xl font-semibold">{title}</h1>
-              <div className="mt-2 flex gap-2 items-center">
-                <span className="px-2 py-1 text-xs rounded bg-green-50 text-green-700">{category}</span>
-                {subcategory && <span className="px-2 py-1 text-xs rounded bg-blue-50 text-blue-700">{subcategory}</span>}
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-green-600">₹{Number(price).toLocaleString("en-IN")}</div>
-              <div className="text-sm text-gray-500">Inclusive of all taxes</div>
-            </div>
-          </div>
-
-          <p className="mt-4 text-gray-700 leading-relaxed">{description}</p>
-
-          {/* Actions */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <button className="px-5 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700">🛒 Add to cart</button>
-            <button className="px-4 py-3 border rounded-lg hover:shadow">🤍 Wishlist</button>
-            <button
-              className="px-4 py-3 border rounded-lg hover:shadow"
-              onClick={() => {
-                const shareData = { title, text: `${title} - ₹${price}`, url: window.location.href };
-                if (navigator.share) navigator.share(shareData).catch(() => {});
-              }}
-            >
-              🔗 Share
-            </button>
-          </div>
-
-          {/* Specifications */}
-          <div className="mt-8 bg-gray-50 p-4 rounded-lg">
-            <h3 className="font-medium">Specifications</h3>
-            {specs.length ? (
-              <dl className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {specs.map((s) => (
-                  <div key={s._id || `${s.title}-${s.value}`} className="flex justify-between text-sm">
-                    <dt className="text-gray-600">{s.title}</dt>
-                    <dd className="font-medium">{s.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            ) : (
-              <p className="text-sm text-gray-500 mt-2">No specifications provided.</p>
-            )}
-          </div>
-
-          {/* Meta */}
-          <div className="mt-4 text-sm text-gray-500">
-            <div>Product ID: <span className="font-medium text-gray-700">{idVal}</span></div>
-            <div>Created: {createdAt ? createdAt.toLocaleString() : "-"}</div>
-            <div>Last updated: {updatedAt ? updatedAt.toLocaleString() : "-"}</div>
-          </div>
+        <div className="pd-bc-right">
+          <button className="icon-btn" title="Wishlist">🤍</button>
+          <button className="icon-btn" title="Share">🔗</button>
         </div>
       </div>
 
-      {/* Bottom: description / details full */}
-      <div className="mt-10 bg-white p-6 rounded-lg shadow">
-        <h2 className="text-lg font-semibold mb-3">Full Description</h2>
-        <div className="prose max-w-none">{description || "No description available."}</div>
+      <div className="pd-grid">
+        {/* Left: Gallery */}
+        <div className="pd-gallery">
+          <div className="pd-thumb-rail">
+            <div className="rail-arrow">▲</div>
+            {images.length ? (
+              images.map((src, i) => (
+                <button
+                  key={i}
+                  className={`thumb-btn ${selectedImage === i ? "thumb-active" : ""}`}
+                  onClick={() => {
+                    setSelectedImage(i);
+                    mainRef.current?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  <img src={src} alt={`thumb-${i}`} />
+                </button>
+              ))
+            ) : (
+              <div className="thumb-placeholder">No images</div>
+            )}
+            <div className="rail-arrow">▼</div>
+          </div>
+
+          <div className="pd-main" ref={mainRef}>
+            <div className="pd-main-inner">
+              <img
+                src={images[selectedImage] || "https://via.placeholder.com/800x600?text=No+Image"}
+                alt="main"
+                className="pd-main-img"
+              />
+            </div>
+
+            <div className="pd-actions-row">
+              <label className="compare">
+                <input type="checkbox" /> Compare
+              </label>
+              <div className="connect">Connect to Store</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Info (sticky) */}
+        <div className="pd-info">
+          <div className="pd-info-card">
+            <h1 className="pd-title">{title}</h1>
+
+            <div className="pd-meta">
+              <div className="pd-badge">Available</div>
+              <div className="pd-cat">
+                {category} {subcategory ? `• ${subcategory}` : ""}
+              </div>
+            </div>
+
+            <div className="pd-price-row">
+              <div className="pd-price">₹{Number(price).toLocaleString("en-IN")}</div>
+              <div className="pd-emi">₹{Math.ceil(price / 4).toLocaleString("en-IN")}/mo</div>
+            </div>
+
+            <div className="pd-cta-row">
+              <button className="btn-primary">🛒 Add to Cart</button>
+              <button className="btn-ghost" title="Add to wishlist">🤍</button>
+            </div>
+
+            <div className="pd-file-row">
+              {file && (
+                <a href={file} target="_blank" rel="noreferrer" className="btn-file">📄 Download Spec</a>
+              )}
+              <button className="btn-copy" onClick={copyLink}>Copy Link</button>
+            </div>
+
+            <div className="pd-keyspecs">
+              <h3>Key Specifications</h3>
+              <div className="pd-key-grid">
+                {specs.slice(0, 6).map((s) => (
+                  <div className="pd-key" key={s._id || s.title}>
+                    <div className="k-title">{s.title}</div>
+                    <div className="k-val">{s.value}</div>
+                  </div>
+                ))}
+              </div>
+              <button className="btn-view-more" onClick={() => setShowAllSpecs(v => !v)}>
+                {showAllSpecs ? "Hide specs" : "View all specs"}
+              </button>
+            </div>
+
+            <div className="pd-meta-sm">
+              <div>Product ID: <span className="muted">{_id}</span></div>
+              <div>Updated: <span className="muted">{updatedAt ? new Date(updatedAt).toLocaleString() : "-"}</span></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Full width sections */}
+        <div className="pd-full">
+          <div className="pd-card specs-card">
+            <div className="card-head">
+              <h3>Specifications</h3>
+              <button className="toggle" onClick={() => setShowAllSpecs(v => !v)}>{showAllSpecs ? "▲" : "▲"}</button>
+            </div>
+
+            <div className={`specs-grid ${showAllSpecs ? "expanded" : ""}`}>
+              <div className="spec-col">
+                {leftSpecs.map((s) => (
+                  <div className="spec-row" key={s._id}>
+                    <div className="spec-title">{s.title}</div>
+                    <div className="spec-value">{s.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="spec-col">
+                {rightSpecs.map((s) => (
+                  <div className="spec-row" key={s._id}>
+                    <div className="spec-title">{s.title}</div>
+                    <div className="spec-value">{s.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="center-row">
+              <button className="btn-outline">View More</button>
+            </div>
+          </div>
+
+          <div className="pd-card overview-card">
+            <div className="card-head">
+              <h3>Overview</h3>
+              <button className="toggle">▲</button>
+            </div>
+            <div className="overview-body">
+              <p>{description}</p>
+              <div className="center-row">
+                <button className="btn-outline">View More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
