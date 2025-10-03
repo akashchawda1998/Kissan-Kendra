@@ -305,7 +305,7 @@ const Navbar = () => {
                         </li>
                             {/* Agriculture Menu */}
                         <li className="menu-item-has-children">
-                          <a href="/agriculture">Agriculture</a>
+                          <a href="/productlist?category=Agriculture">Agriculture</a>
                           <ul className="sub-menu">
 
 
