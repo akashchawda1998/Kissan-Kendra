@@ -14,6 +14,9 @@ const Navbar = () => {
   const [showEnquiry, setShowEnquiry] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [openMenus, setOpenMenus] = useState({});
+    const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const placeholders = ["tractor", "car", "agriculture", "motor"];
+
   const handleToggleEnquiry = () => {
     setShowEnquiry(prev => !prev);
   };
@@ -104,7 +107,13 @@ const Navbar = () => {
               </a>
               {openMenus["agriculture"] && (
                 <ul className="sub-menu">
-                  <li><a href="/productlist?category=159">Agriculture Machine</a></li>
+                  <li><a href="/productlist?category=159">Agriculture Machine</a>
+                    
+                    <ul>
+                      
+                      <li></li>
+                      </ul>
+                      </li>
                   <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
                   <li><a href="/productlist?category=155">Agriculture Pumps</a></li>
                 </ul>
@@ -194,30 +203,63 @@ const Navbar = () => {
       <header ref={headerRef} className="vs-header header-layout1">
         <div className="header-top">
           <div className="container-fluid">
-            <div className="row justify-content-between">
-              <div className="col-auto">
-                <div className="header-links">
-                  <ul>
-                    <li>
-                      <i className="fas fa-envelope"></i>
-                      <a href="mailto:info@example.com">info@kisaankendra.in</a>
-                    </li>
-                    <li>
-                      <i className="fas fa-phone-alt"></i>
-                      <a href="tel:+9191092626365">+91 9109-62-63-65</a>
-                    </li>
-                    
-                  </ul>
-                </div>
-              </div>
-              <div className="col-auto">
-                <div className="social-style1">
-                  <a href="#" style={{ color: "white" }}><i className="fab fa-facebook-f"></i></a>
-                  <a href="#" style={{ color: "white" }}><i className="fab fa-linkedin-in"></i></a>
-                  <a href="https://www.instagram.com/kendrakisaan/" style={{ color: "white" }}><i className="fab fa-instagram"></i></a>
-                </div>
-              </div>
-            </div>
+          <div className="row justify-content-between  py-2">
+  {/* Left: Contact Info */}
+  <div className="col-md-4 col-sm-12 mb-2 mb-md-0">
+    <div className="header-links">
+      <ul className="list-inline mb-0">
+        <li className="list-inline-item mr-3">
+          <i className="fas fa-envelope mr-1"></i>
+          <a href="mailto:info@kisaankendra.in" style={{ color: "white", textDecoration: "none" }}>info@kisaankendra.in</a>
+        </li>
+        <li className="list-inline-item">
+          <i className="fas fa-phone-alt mr-1"></i>
+          <a href="tel:+9191092626365" style={{ color: "white", textDecoration: "none" }}>+91 9109-62-63-65</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {/* Center: Search Bar */}
+  <div className="col-md-4 col-sm-12 mb-2 mb-md-0">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        const query = e.target.search.value.trim();
+        if (query) {
+          console.log("Search for:", query);
+          // Example: window.location.href = `/search?q=${query}`;
+        }
+      }}
+      className="d-flex"
+    >
+      <input
+        type="text"
+        name="search"
+        className="form-control"
+        placeholder="Search for products..."
+        style={{ borderRadius: "20px 0 0 20px", padding: "15px" ,height:"20px",  fontFamily: "DM Sans"}}
+      />
+      <button
+        type="submit"
+        className="btn btn-light"
+        style={{ borderRadius: "0 20px 20px 0", padding: "0 20px" }}
+      >
+        <i className="fas fa-search"></i>
+      </button>
+    </form>
+  </div>
+
+  {/* Right: Social Media */}
+  <div className="col-md-4 col-sm-12 ">
+    <div className="social-style1 text-right">
+      <a href="#" className="mx-2" style={{ color: "white" }}><i className="fab fa-facebook-f"></i></a>
+      <a href="#" className="mx-2" style={{ color: "white" }}><i className="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/kendrakisaan/" className="mx-2" style={{ color: "white" }}><i className="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
 

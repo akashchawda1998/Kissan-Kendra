@@ -88,6 +88,8 @@ const Footer = () => {
                 <div className="vs-widget-about">
                                  <h3 className="widget_title">Kisaan Kendra</h3>
 
+                                 <h6>GST Number : 23AAVFT7578D1ZP</h6>
+
                   <p className="footer-text">
                     Kisaan Kendra is your one-stop shop for farm essentials—tractors, batteries,
                     agricultural machinery, and durable tractor tyres—all at competitive prices.
