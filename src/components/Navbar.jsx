@@ -81,7 +81,7 @@ const Navbar = () => {
                     </a>
                     {openMenus["new-tractors"] && (
                       <ul className="sub-menu">
-                        <li><a href="/productlist?category=167">Mahindra & Mahindra</a></li>
+                        <li><a href="/productlist?category=Tractors&subcategory=Mahindra & Mahindra">Mahindra & Mahindra</a></li>
                         <li><a href="/productlist?category=180">Eicher</a></li>
                         <li><a href="/productlist?category=192">New Holland</a></li>
                         <li><a href="/tractor/swaraj">Swaraj</a></li>
@@ -288,7 +288,7 @@ const Navbar = () => {
                             <li>
                               <a href="/tractor">New Tractors</a>
                               <ul className="sub-menu">
-                                <li><a href="/productlist?category=Mahindra & Mahindra">Mahindra & Mahindra</a></li>
+                                <li><a href="/productlist?category=Tractors&subcategory=Mahindra & Mahindra">Mahindra & Mahindra</a></li>
                                 <li><a href="/productlist?category=Eicher">Eicher</a></li>
                                 <li><a href="/productlist?category=192">New Holland</a></li>
                                 <li><a href="/tractor/swaraj">Swaraj</a></li>
