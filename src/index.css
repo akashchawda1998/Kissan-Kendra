@@ -75,6 +75,9 @@ Version: 1.0.0
 /* slick-carousel CSS */
 
 
+.social-style1{
+  float: right!important;
+}
 :root {
   --body-bg: #ffffff;
   --theme-color: #0c7735;
@@ -8384,6 +8387,7 @@ table.variations .reset_variations {
 .social-style1 {
   float: right;
 }
+
 .social-style1 a:hover {
   color: var(--theme-color);
 }
