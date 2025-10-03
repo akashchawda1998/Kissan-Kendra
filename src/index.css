@@ -9099,17 +9099,29 @@ table.variations .reset_variations {
 
 
 
-/* ProductDetail.css - polished dark theme UI */
+/* ProductDetail.css - polished dark theme UI with full-page background */
 
-/* Root */
+/* ---------- PAGE BACKGROUND WRAPPER ---------- */
+/* Save a background image to your public/ folder (e.g. public/product-bg.jpg)
+   or change the URL below to any external URL.
+   Background will be fixed, cover entire viewport with a dark overlay
+   so the product card remains readable.
+*/
+
+/* overlay to darken background and add depth */
+
+
+/* container sits above overlay */
 .pd-container {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 18px;
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
   color: #e6eef1;
-  background: linear-gradient(180deg, #0f1720 0%, #0b1216 100%);
   border-radius: 10px;
+  /* subtle glass effect to separate from background */
 }
 
 /* Breadcrumb */
@@ -9190,22 +9202,21 @@ table.variations .reset_variations {
 /* Info / sticky card */
 .pd-info-card {
   position: sticky;
-  top: 24px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+  top: 15px;
   border-radius:12px;
   padding:18px;
-  border: 1px solid rgba(255,255,255,0.03);
-  box-shadow: 0 14px 40px rgba(2,6,10,0.65);
 }
-.pd-title { font-size:22px; color:#eafff4; margin:0 0 6px; }
+.pd-title { font-size:22px; color:#000; margin:0 0 6px; }
 .pd-meta { display:flex; gap:12px; align-items:center; margin-bottom:8px; }
-.pd-badge { background: rgba(6, 182, 123, 0.12); color:#00c98a; padding:6px 10px; border-radius:999px; font-size:12px; }
+.pd-badge { background: rgba(6, 182, 123, 0.12); color:#000; padding:6px 10px; border-radius:999px; font-size:12px; }
 .pd-cat { color:#9fb0b2; font-size:13px; }
 
 .pd-price-row { display:flex; justify-content:space-between; align-items:baseline; margin-top:8px; }
 .pd-price { font-size:28px; color:#00c98a; font-weight:700; }
-.pd-emi { color:#a8cbbf; font-size:14px; }
-
+.pd-emi { color:#000; font-size:14px; }
+.pd-keyspecs h3{
+  color: #000;
+}
 .pd-cta-row { display:flex; gap:10px; margin-top:14px; }
 .btn-primary {
   flex:1;
@@ -9227,10 +9238,13 @@ table.variations .reset_variations {
 /* Key specs */
 .pd-keyspecs { margin-top:16px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02)); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.02); }
 .pd-key-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:8px; }
-.k-title { color:#9fb0b2; font-size:13px; }
-.k-val { font-weight:600; color:#e6efe9; font-size:13px; }
+.k-title { color:#000; font-size:13px; }
+.k-val { font-weight:600; color:#000; font-size:13px; }
 .btn-view-more { margin-top:10px; background:transparent; color:#00d08c; border:none; cursor:pointer; }
 
+.card-head h3{
+  color: #000;
+}
 /* small meta text */
 .pd-meta-sm { margin-top:12px; color:#9fb0b2; font-size:13px; }
 
@@ -9246,9 +9260,9 @@ table.variations .reset_variations {
 .specs-grid.expanded { max-height:1200px; }
 .spec-col { flex:1; }
 .spec-row { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.02); }
-.spec-title { color:#9fb0b2; font-size:13px; width:50%; }
-.spec-value { font-weight:600; color:#e6efe9; width:45%; text-align:right; }
-
+.spec-title { color:#000; font-size:13px; width:50%; }
+.spec-value { font-weight:600; color:#000; width:45%; text-align:right; }
+.spec-value
 /* overview */
 .overview-body { margin-top:12px; color:#cfe6dd; line-height:1.6; font-size:14px; }
 
