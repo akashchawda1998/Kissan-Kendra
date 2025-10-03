@@ -110,8 +110,8 @@ const Navbar = () => {
                   <li><a href="/productlist?category=159">Agriculture Machine</a>
                     
                     <ul>
-                      
-                      <li></li>
+                     <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
+                  <li><a href="/productlist?category=155">Agriculture Pumps</a></li>
                       </ul>
                       </li>
                   <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
@@ -308,6 +308,26 @@ const Navbar = () => {
                           <a href="/agriculture">Agriculture</a>
                           <ul className="sub-menu">
                             <li><a href="/productlist?category=159">Agriculture Machine</a></li>
+
+
+                             <li>
+                              <a href="/tractor">Agriculture Machine</a>
+                              <ul className="sub-menu">
+
+
+                                <li><a href="/productlist?category=Mahindra & Mahindra">Brush Cutters</a></li>
+                                <li><a href="/productlist?category=Eicher">Chainsaws</a></li>
+                                <li><a href="/productlist?category=192">Chaff Cutters</a></li>
+                                <li><a href="/tractor/swaraj">Earth Auger</a></li>
+                                <li><a href="/tractor/farmtrac">Harvesters</a></li>
+                                <li><a href="/tractor/captain">Harvesters</a></li>
+                                <li><a href="/tractor/kubota">Manual Seeder</a></li>
+                                <li><a href="/tractor/sonalika">Sprayers</a></li>
+                                <li><a href="/tractor/powertrac">Powertrac</a></li>
+                              </ul>
+                            </li>   
+
+
 
                             <li><a href="/productlist?category=157">Agriculture Pipes</a></li>
                             <li><a href="/productlist?category=155">Agriculture Pumps</a></li>

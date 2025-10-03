@@ -13,7 +13,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
-      const url = `https://api.kisaankendra.in/api/products/filter?category=Tractors`;
+      const url = `https://admin.kisaankendra.in/api/product/category/get-all-categories`;
 
       try {
         const response = await axios.get(url);

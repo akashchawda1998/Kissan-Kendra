@@ -5479,10 +5479,12 @@ blockquote.vs-quote p {
 .categorie-style1 {
   text-align: center;
 }
+
+
 .categorie-style1 .categorie-img {
   background-color: #eaeaea7d;
-  border-radius: 50%;
-  padding: 20px;
+  border-radius: 10%;
+  padding: 10px;
   width: 130px;
   height: 130px;
   line-height: 170px;
@@ -5492,6 +5494,12 @@ blockquote.vs-quote p {
   justify-content: center;
   align-items: center;
 }
+
+.categorie-style1:hover .categorie-img {
+  background-color:#68ffb83b;
+}
+
+
 .categorie-style1 .categorie-content .categorie-title {
   margin-bottom: 0;
 }
