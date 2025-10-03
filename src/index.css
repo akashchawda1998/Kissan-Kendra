@@ -5480,7 +5480,7 @@ blockquote.vs-quote p {
   text-align: center;
 }
 .categorie-style1 .categorie-img {
-  background-color: #FFF7CC;
+  background-color: #eaeaea7d;
   border-radius: 50%;
   padding: 20px;
   width: 130px;
@@ -5504,9 +5504,6 @@ blockquote.vs-quote p {
 }
 .categorie-style1 .categorie-content .categorie-text {
   margin-bottom: 0;
-}
-.categorie-style1:hover .categorie-img {
-  background-color: var(--theme-color);
 }
 
 .categorie-style2 {

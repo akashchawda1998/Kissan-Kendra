@@ -3,21 +3,23 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import tractorImg from "../assets/img/catagory-Logo/tractor.png";
-import batteriesImg from "../assets/img/catagory-Logo/batteries.png";
-import motorsImg from "../assets/img/catagory-Logo/engine.png";
-import tyresImg from "../assets/img/catagory-Logo/tyre.png";
-import axeImg from "../assets/img/catagory-Logo/axe.png";
+import tractorImg from "./tacttor.png";
+import batteriesImg from "./battery.png";
+import motorsImg from "./motos.png";
+import tyresImg from "./tyre.png";
+import axeImg from "./palf.png";
 import titleLogo from "../assets/img/icon/title-logo.png";
+import spring from './c2.png'
+import drone  from './drone.png'
 
 const categories = [
   { title: "Tractors", image: tractorImg, link: "tractor" },
   { title: "Batteries", image: batteriesImg, link: "batteries" },
   { title: "Motors", image: motorsImg, link: "motors" },
   { title: "Tyres", image: tyresImg, link: "tyres" },
-  { title: "Rotavator", image: axeImg, link: "axe" },
-  { title: "Sprinkler", image: batteriesImg, link: "batteries" },
-  { title: "Drone", image: batteriesImg, link: "batteries" },
+  { title: "Plough", image: axeImg, link: "axe" },
+  { title: "Sprinkler", image: spring, link: "batteries" },
+  { title: "Drone", image: drone, link: "batteries" },
 ];
 
 const CategoriesCarousel = () => {
@@ -64,11 +66,10 @@ const CategoriesCarousel = () => {
                       alt={item.title}
                       style={{
                         width: "100%",
-                        maxWidth: "120px",
+                        maxWidth: "140px",
                         height: "auto",
                         objectFit: "contain",
                         margin: "0 auto",
-                        padding: "10px",
                       }}
                     />
                   </a>
